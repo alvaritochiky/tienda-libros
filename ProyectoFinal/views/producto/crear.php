@@ -20,11 +20,20 @@ if (isset($edit) && isset($pro) && is_object($pro)) {
             Descripcion
             <textarea name="descripcion"
                       class="form-control mb-4"><?= isset($pro) && is_object($pro) ? $pro->descripcion : ''; ?></textarea>
-
+            Autor
+            <br>
+            <input class="form-control mb-4" type="text" name="autor"
+                   value="<?= isset($pro) && is_object($pro) ? $pro->autor : ''; ?>"/>
             Precio
             <br>
             <input class="form-control mb-4" type="text" name="precio"
                    value="<?= isset($pro) && is_object($pro) ? $pro->precio : ''; ?>"/>
+
+            tipo
+            <br>
+
+            <input class="form-control mb-4" type="text" name="tipo"
+                   value="<?= isset($pro) && is_object($pro) ? $pro->tipo : ''; ?>"/>
             Stock
             <input class="form-control mb-4" type="number" name="stock"
                    value="<?= isset($pro) && is_object($pro) ? $pro->stock : ''; ?>"/>
@@ -52,12 +61,31 @@ if (isset($edit) && isset($pro) && is_object($pro)) {
             ?>
             <br><br>
             <div class="custom-file">
-                <input type="file" class="custom-file-input" name="imagen" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <input type="file" class="custom-file-input" name="imagen" id="inputGroupFile01"
+                       aria-describedby="inputGroupFileAddon01">
                 <label class="custom-file-label" for="inputGroupFile01">Elige un archivo</label>
             </div>
             <!--<input class="form-control mb-4 " type="file" name="imagen"/>-->
             <br><br>
-            <button class="form-control mb-4 btn btn-success text-white w-50 p-2" type="submit" >Guardar</button>
+             PDF
+            <br><br>
+            <?php
+            if (isset($pro) && is_object($pro) && !empty($pro->imagen)) {
+
+                echo $pro->pdf;
+            } else {
+                echo "No tiene formato pdf";
+            }
+
+            ?>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="pdf" id="inputGroupFile01"
+                       aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">Elige un archivo</label>
+            </div>
+            <br><br>
+
+            <button class="form-control mb-4 btn btn-success text-white w-50 p-2" type="submit">Guardar</button>
 
         </form>
     </div>

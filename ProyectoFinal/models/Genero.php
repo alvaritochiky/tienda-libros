@@ -40,5 +40,9 @@ class Genero
         return $generos;
 
     }
+    public function getOne(){
+        $generos = $this->db->query("SELECT * FROM genero WHERE id={$this->getId()}");
+        return $generos->fetch_object();
+    }
 
 }

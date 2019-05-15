@@ -1,4 +1,3 @@
-
 <?php
 
 if (isset($_SESSION['pedido']) && $_SESSION['pedido'] == 'complete') {
@@ -13,55 +12,66 @@ if (isset($_SESSION['pedido']) && $_SESSION['pedido'] == 'complete') {
     <?php if (isset($pedido)): ?>
 
 
-            <h3>Datos del pedido:</h3>
+        <h3>Datos del pedido:</h3>
 
-            Número de pedido: <?= $pedido->id ?> <br/>
-            Total a pagar: <?= $pedido->coste ?> € <br/>
-            Productos:
-            <table>
+        Número de pedido: <?= $pedido->id ?> <br/>
+        Total a pagar: <?= $pedido->coste ?> € <br/>
+        Productos:
+        <table class="table">
+            <thead class="black white-text">
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Unidades</th>
+                <th>Tipo</th>
+            </tr>
+            </thead>
+            <?php while ($producto = $productos->fetch_object()): ?>
+
                 <tr>
-                    <th>Imagen</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Unidades</th>
+                    <td>
+                        <?php if ($producto->imagen != null): ?>
+                            <img src="<?php echo $producto->imagen ?>" class="img_carrito"/>
+                        <?php else: ?>
+                            <img src="assets/img/Logo.png" class="img_carrito"/>
+                        <?php endif; ?>
+                    </td>
+                    <td>
+                        <a href="index.php?controller=producto&action=ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
+                    </td>
+                    <td>
+                        <?= $producto->precio ?>
+                    </td>
+                    <td>
+                        <?= $producto->unidades ?>
+                    </td>
+                    <td>
+                        <?php if ($producto->tipo != "fisico"): ?>
+                            <a href='#' class="text-success"> <?= $producto->tipo ?></a>
+                        <?php else: ?>
+                            <?= $producto->tipo ?>
+                        <?php endif; ?>
+                    </td>
                 </tr>
-                <?php while ($producto = $productos->fetch_object()): ?>
-                    <tr>
-                        <td>
-                            <?php if ($producto->imagen != null): ?>
-                                <img src="<?php echo $producto->imagen ?>" class="img_carrito"/>
-                            <?php else: ?>
-                                <img src="assets/img/Logo.png" class="img_carrito"/>
-                            <?php endif; ?>
-                        </td>
-                        <td>
-                            <a href="index.php?controller=producto&action=ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
-                        </td>
-                        <td>
-                            <?= $producto->precio ?>
-                        </td>
-                        <td>
-                            <?= $producto->unidades ?>
-                        </td>
-                    </tr>
+
                 <?php
-                $totalStock=$producto->stock-$producto->unidades;
-                    $bbdd=new mysqli("localhost","root","","tienda_libros");
-                    $sql="UPDATE productos SET stock='$totalStock' where id='$producto->id'";
-                    $bbdd->query($sql);
-                endwhile;
+                //Mejorar esta puta mierda
+                $totalStock = $producto->stock - $producto->unidades;
+                $bbdd = new mysqli("localhost", "root", "", "tienda_libros");
+                $sql = "UPDATE productos SET stock='$totalStock' where id='$producto->id'";
+                $bbdd->query($sql);
+            endwhile;
 
 
-                ?>
+            ?>
 
-            </table>
+        </table>
         </div>
         <a class='button' id="Download">Descargar pdf con la factura</a>
 
 
     <?php
-
-
 
     endif; ?>
 

@@ -23,10 +23,11 @@ nombre            varchar (100) not null,
 CONSTRAINT pk_genero PRIMARY KEY (id)
 )ENGINE=InnoDb;
 
-INSERT INTO genero VALUES(NULL,"Novela negra");
+INSERT INTO genero VALUES(NULL,"Ciencia Ficcion");
 INSERT INTO genero VALUES(NULL,"Romantica");
-INSERT INTO genero VALUES(NULL,"Fantasia");
-INSERT INTO genero VALUES(NULL,"Comics");
+INSERT INTO genero VALUES(NULL,"Juvenil");
+INSERT INTO genero VALUES(NULL,"Thriller");
+INSERT INTO genero VALUES(NULL,"Novela Grafica");
 
 
 CREATE TABLE productos(
@@ -34,12 +35,14 @@ id              int(255) auto_increment not null,
 genero_id       int(255) not null,
 nombre          varchar(100) not null,
 descripcion     text,
+autor           varchar(100) not null,
 precio          float(100,2) not null,
-/*tipo            varchar(100) not null,*/
+tipo            varchar(100) not null,
 stock           int(255) not null,
 oferta          varchar(2),
 fecha           date not null,
 imagen          varchar(255),
+pdf             varchar(255),
 CONSTRAINT pk_productos PRIMARY KEY(id),
 CONSTRAINT fk_producto_genero FOREIGN KEY(genero_id) REFERENCES genero(id)
 )ENGINE=InnoDb;

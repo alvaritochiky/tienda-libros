@@ -7,12 +7,16 @@ class Producto
     private $genero_id;
     private $nombre;
     private $descripcion;
+    private $autor;
     private $precio;
+    private $tipo;
     private $stock;
     private $oferta;
     private $fecha;
     private $imagen;
+    private $pdf;
     private $db;
+
 
     public function __construct()
     {
@@ -65,6 +69,16 @@ class Producto
         $this->descripcion = $descripcion;
     }
 
+    public function getAutor()
+    {
+        return $this->autor;
+    }
+
+    public function setAutor($autor)
+    {
+        $this->autor = $autor;
+    }
+
     public function getPrecio()
     {
         return $this->precio;
@@ -74,6 +88,16 @@ class Producto
     public function setPrecio($precio)
     {
         $this->precio = $precio;
+    }
+
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
     }
 
     public function getStock()
@@ -118,6 +142,16 @@ class Producto
         $this->imagen = $imagen;
     }
 
+    public function getPdf()
+    {
+        return $this->pdf;
+    }
+
+    public function setPdf($pdf)
+    {
+        $this->pdf = $pdf;
+    }
+
     public function getAll()
     {
         $productos = $this->db->query("SELECT * FROM productos");
@@ -135,17 +169,28 @@ class Producto
         $productos = $this->db->query("SELECT * FROM productos WHERE id='$this->id'");
         return $productos->fetch_object();
     }
+    public function getAllGenero(){
+        $sql = "SELECT * FROM productos "
+            . "INNER JOIN genero on productos.genero_id=genero.id "
+       . "WHERE productos.genero_id = {$this->getGeneroId()} ";
+        $productos = $this->db->query($sql);
+        echo $this->db->error;
+        return $productos;
+    }
 
     function save()
     {
         $nombre = $this->getNombre();
         $descripcion = $this->getDescripcion();
+        $autor=$this->getAutor();
         $precio = $this->getPrecio();
+        $tipo=$this->getTipo();
         $stock = $this->getStock();
         $genero = $this->getGeneroId();
         $imagen = $this->getImagen();
+        $pdf=$this->getPdf();
 
-        $sql = "INSERT INTO productos VALUES(NULL,$genero,'$nombre','$descripcion',$precio,$stock,null, CURDATE(),'$imagen');";
+        $sql = "INSERT INTO productos VALUES(NULL,$genero,'$nombre','$descripcion','$autor',$precio,'$tipo',$stock,null, CURDATE(),'$imagen','$pdf');";
         $save = $this->db->query($sql);
         $result = false;
         if ($save) {
@@ -158,12 +203,15 @@ class Producto
     {
         $nombre = $this->getNombre();
         $descripcion = $this->getDescripcion();
+        $autor=$this->getAutor();
         $precio = $this->getPrecio();
+        $tipo=$this->getTipo();
         $stock = $this->getStock();
         $genero = $this->getGeneroId();
         $imagen = $this->getImagen();
+        $pdf=$this->getPdf();
 
-        $sql = "UPDATE productos SET nombre='$nombre', descripcion='$descripcion', precio='$precio', stock='$stock', genero_id='$genero'";
+        $sql = "UPDATE productos SET nombre='$nombre', descripcion='$descripcion',autor='$autor', precio='$precio',tipo='$tipo',stock='$stock', genero_id='$genero',pdf='$pdf'";
         if ($imagen != null) {
             $sql .= ", imagen='assets/img/libros/" . $imagen . "'";
         }
@@ -200,7 +248,9 @@ class Producto
 
 
     }
-    function stockDel(){
+
+    function stockDel()
+    {
         echo "hola";
     }
 

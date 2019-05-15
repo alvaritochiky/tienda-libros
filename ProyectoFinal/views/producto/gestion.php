@@ -37,7 +37,7 @@ Utils::deleteSession("delete");
                 echo "<td>" . $val["nombre"] . "</td>";
                 echo "<td>" . $val["precio"] . "€</td>";
                 echo "<td>" . $val["stock"] . "</td>";
-                echo "<td>Fisico</td>";
+                echo "<td>" . $val["tipo"] . "</td>";
                 echo "<td>";
                 echo "<a href='index.php?controller=producto&action=editar&id=" . $val["id"] . "' class='btn btn-success text-white mr-2'>Editar</a>";
                 echo "<a href='index.php?controller=producto&action=eliminar&id=" . $val["id"] . "' class='btn btn-danger text-white'>Eliminar</a>";

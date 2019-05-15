@@ -68,56 +68,63 @@
                 <!-- Dropdown -->
                 <li class="nav-item dropdown  mr-5">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false" ><span class="items">Generos</span></a>
+                       aria-haspopup="true" aria-expanded="false"><span class="items">Generos</span></a>
                     <div class="dropdown-menu dropdown-primary green accent-3" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#" >Romantica</a>
+                        <?php $genero = Utils::showGeneros(); ?>
+                        <!--<a class="dropdown-item" href="index.php?controller=genero&action=show" >Romantica</a>
                         <a class="dropdown-item" href="#">Fantasia</a>
                         <a class="dropdown-item" href="#">Juvenil</a>
                         <a class="dropdown-item" href="#">Thriller</a>
-                        <a class="dropdown-item" href="#">Novela Grafica</a>
-                    </div>
+                        <a class="dropdown-item" href="#">Novela Grafica</a>-->
+                        <?php while ($gen = $genero->fetch_object()): ?>
+
+                        <a class="dropdown-item" href="index.php?controller=genero&action=show&id=<?= $gen->id ?>"><?= $gen->nombre ?></a>
+                        <?php endwhile; ?>
                 </li>
 
-            </ul>
+        </div>
+        </li>
 
-            <form class="form-inline " action="index.php?controller=producto&action=buscarLibro" method="post">
-                <input class="form-control mr-sm-2 ml-sm-5" type="text" placeholder="Buscar libro" aria-label="Search"
-                       name="searchBook">
-                <button class="btn btn-outline-white btn-rounded btn-sm my-0" type="submit">Buscar</button>
-            </form>
-            <ul>
-                <?php $stats = Utils::statsCarrito(); ?>
-                <li class="list-unstyled mt-3 ml-5"><a href="index.php?controller=carrito&action=index" id="carr"
-                                                       class="white-text"><i
-                                class="fas fa-shopping-cart mt-2 text-dark"></i>(<?php echo $stats["count"] ?>)</a></li>
+        </ul>
 
-            </ul>
+        <form class="form-inline " action="index.php?controller=producto&action=buscarLibro" method="post">
+            <input class="form-control mr-sm-2 ml-sm-5" type="text" placeholder="Buscar libro" aria-label="Search"
+                   name="searchBook">
+            <button class="btn btn-outline-white btn-rounded btn-sm my-0" type="submit">Buscar</button>
+        </form>
+        <ul>
+            <?php $stats = Utils::statsCarrito(); ?>
+            <li class="list-unstyled mt-3 ml-5"><a href="index.php?controller=carrito&action=index" id="carr"
+                                                   class="white-text"><i
+                            class="fas fa-shopping-cart mt-2 text-dark"></i>(<?php echo $stats["count"] ?>)</a></li>
+
+        </ul>
+        <?php
+        if (!isset($_SESSION["identity"])) {
+            ?>
+            <div class="nav navbar-nav col-lg-2 col-md-3 col-sm-4 ml-sm-5">
+                <a href="" class="btn danger-color   text-white" data-toggle="modal" data-target="#modalLoginForm">Iniciar
+                    sesion</a>
+            </div>
             <?php
-            if (!isset($_SESSION["identity"])) {
-                ?>
-                <div class="nav navbar-nav col-lg-2 col-md-3 col-sm-4 ml-sm-5">
-                    <a href="" class="btn danger-color   text-white" data-toggle="modal" data-target="#modalLoginForm">Iniciar
-                        sesion</a>
-                </div>
-                <?php
 
-            }
-            if (isset($_SESSION["identity"])) {
-                echo '<div class="dropdown ml-sm-5">';
-                echo '<a class="btn btn  green accent-3 text-dark dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown"
+        }
+        if (isset($_SESSION["identity"])) {
+            echo '<div class="dropdown ml-sm-5">';
+            echo '<a class="btn btn  green accent-3 text-dark dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">' . $_SESSION["identity"]->nombre . ' </a>';
-                echo '<div class="dropdown-menu green accent-3 " aria-labelledby="navbarDropdownMenuLink">';
-            }
-            if (isset($_SESSION["admin"])) {
-                ?>
+            echo '<div class="dropdown-menu green accent-3 " aria-labelledby="navbarDropdownMenuLink">';
+        }
+        if (isset($_SESSION["admin"])) {
+            ?>
 
-                <a class="dropdown-item" href="index.php?controller=producto&action=gestion">Gestionar productos</a>
-                <a class="dropdown-item" href="index.php?controller=pedido&action=gestion">Gestionar pedidos</a>
+            <a class="dropdown-item" href="index.php?controller=producto&action=gestion">Gestionar productos</a>
+            <a class="dropdown-item" href="index.php?controller=pedido&action=gestion">Gestionar pedidos</a>
 
 
-                <?php
-            }
-            if (isset($_SESSION["identity"]))  {
+            <?php
+        }
+        if (isset($_SESSION["identity"])) {
 
             ?>
             <a class="dropdown-item" href="index.php?controller=pedido&action=mis_pedidos">Mis pedidos</a>
@@ -125,9 +132,9 @@
             <a class="dropdown-item" href="index.php?controller=usuario&action=logout">Cerrar Sesion</a>
 
 
-        </div>
-        </div>
-        <?php
+            </div>
+            </div>
+            <?php
         } ?>
 
         </div>

@@ -49,7 +49,9 @@ class productoController
             $producto = new Producto();
             $producto->setNombre($_POST["nombre"]);
             $producto->setDescripcion($_POST["descripcion"]);
+            $producto->setAutor($_POST["autor"]);
             $producto->setPrecio($_POST["precio"]);
+            $producto->setTipo($_POST["tipo"]);
             $producto->setStock($_POST["stock"]);
             $producto->setGeneroId($_POST["genero"]);
 
@@ -63,6 +65,7 @@ class productoController
             }
             move_uploaded_file($file["tmp_name"],"uploads/images".$filename);*/
             $producto->setImagen($filename);
+            $producto->setPdf($_POST["pdf"]);
 
             if (isset($_GET["id"])) {
                 $id = $_GET["id"];
