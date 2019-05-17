@@ -6,8 +6,20 @@ class productoController
     public function index()
     {
         $producto = new Producto();
-        $productos = $producto->getRandom();
+        $productos = $producto->getAll();
         include_once "views/producto/destacados.php";
+    }
+    public function indexBooks()
+    {
+        $producto = new Producto();
+        $productos = $producto->getAllBooks();
+        include_once "views/producto/books.php";
+    }
+    public function indexEbooks()
+    {
+        $producto = new Producto();
+        $productos = $producto->getAllEbooks();
+        include_once "views/producto/ebooks.php";
     }
 
     public function ver()

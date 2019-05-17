@@ -299,6 +299,7 @@ input[type="submit"]:hover, .button:hover {
     text-align: center;
     margin-bottom: 30px;
 
+
 }
 
 .product a {
@@ -316,9 +317,11 @@ input[type="submit"]:hover, .button:hover {
 }
 
 .product img {
-    height: 170px;
+    height: 300px;
     margin-bottom: 10px;
-    border: 1px solid black;
+
+   box-shadow: 4px 1px 4px 4px black;
+
 }
 
 .img_carrito {
@@ -464,9 +467,6 @@ input[type="submit"]:hover, .button:hover {
     border-radius: 12px;
 }
 
-.dropdown:hover > .dropdown-menu {
-    display: block;
-}
 .btn{
     transition: 1s;
 }
@@ -475,3 +475,7 @@ input[type="submit"]:hover, .button:hover {
     box-shadow: 2px 2px 4px 4px black;
 
 }
+
+/*Productos destacos*/
+
+
