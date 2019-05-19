@@ -152,9 +152,14 @@ class Producto
         $this->pdf = $pdf;
     }
 
-    public function getAll()
+    public function getDest()
     {
         $productos = $this->db->query("SELECT * FROM productos order by RAND() LIMIT 3");
+        return $productos;
+    }
+    public function getAll()
+    {
+        $productos = $this->db->query("SELECT * FROM productos");
         return $productos;
     }
     public function getAllBooks()
@@ -164,7 +169,7 @@ class Producto
     }
     public function getAllEbooks()
     {
-        $productos = $this->db->query("SELECT * FROM productos where tipo='pdf'");
+        $productos = $this->db->query("SELECT * FROM productos where tipo='ebook'");
         return $productos;
     }
 

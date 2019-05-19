@@ -11,6 +11,7 @@
     echo "<div class='data'>";
     echo "<p class='description'>". nl2br($product->descripcion) ."</p >";
     echo "<p class='price'> $product->precio €</p >";
+    echo "<p class='price'> $product->tipo</p >";
     echo "<a href = 'index.php?controller=carrito&action=add&id=$product->id' class='btn btn-success text-white' id='btn-prod'> Comprar</a >";
     echo "</div>";
     echo "</div>";

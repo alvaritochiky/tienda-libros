@@ -38,7 +38,7 @@ if (isset($edit) && isset($pro) && is_object($pro)) {
             <input class="form-control mb-4" type="number" name="stock"
                    value="<?= isset($pro) && is_object($pro) ? $pro->stock : ''; ?>"/>
 
-            Categoria
+            Genero
             <?php $generos = Utils::showGeneros(); ?>
             <select class="form-control mb-4 " name="genero">
                 <!--Cambiar estos isset-->

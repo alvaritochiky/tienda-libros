@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+
     <title>Tienda de Libros</title>
 
     <!-- JQuery -->
@@ -17,7 +18,6 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <script type="text/javascript">
-
         $(document).ready(function () {
             $('#Download').click(function () {
 
@@ -44,7 +44,7 @@
 <nav class="menuHeader success-color ">
     <nav class="navbar navbar-expand-xl navbar-dark ">
 
-        <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png">Nombre X</a>
+        <a class="navbar-brand" href="index.php"><img src="assets/img/Logo.png">Nombre X</a>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -62,10 +62,12 @@
                     </a>
                 </li>
                 <li class="nav-item mr-5">
-                    <a class="nav-link" href="index.php?controller=producto&action=indexBooks" class="items"><span class="items">Libros</a></span>
+                    <a class="nav-link" href="index.php?controller=producto&action=indexBooks" class="items"><span
+                                class="items">Libros</a></span>
                 </li>
                 <li class="nav-item mr-5">
-                    <a class="nav-link" href="index.php?controller=producto&action=indexEbooks" class="items"><span class="items">eBook</a></span>
+                    <a class="nav-link" href="index.php?controller=producto&action=indexEbooks" class="items"><span
+                                class="items">eBook</a></span>
                 </li>
 
                 <!-- Dropdown -->
@@ -162,7 +164,7 @@
                                 <i class="fas fa-user prefix grey-text"></i>
 
                                 <input type="email" id="defaultForm-email" class="form-control  text-dark m-5"
-                                       name="email">
+                                       name="email" id="email">
 
                                 <label for="defaultForm-email" class="text-success ">Email</label>
 
@@ -170,7 +172,7 @@
                             <div class="md-form mb-4">
                                 <i class="fas fa-lock prefix grey-text"></i>
                                 <input type="password" id="defaultForm-pass" class="form-control  text-dark m-5"
-                                       name="pass">
+                                       name="pass" id="pass">
                                 <label for="defaultForm-pass" class="text-success">Contraseña</label>
                                 <hr>
                             </div>
@@ -185,20 +187,11 @@
                             </a>
                         </p>
                 </div>
-
-
             </div>
             </form>
-
-
         </div>
-
         </div>
-
-
     </nav>
-
-
     <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -309,6 +302,7 @@ if (isset($_SESSION["registro"]) && $_SESSION["registro"] == "complete") {
 }
 Utils::deleteSession("registro");
 ?>
+
 <div id="container">
     <!--/.Navbar-->
     <div id="content">

@@ -78,8 +78,9 @@ textarea {
 }
 
 /*HEADER*/
-.menuHeader {
-    width: 100%;
+
+ .menuHeader {
+    width: 102%;
 
 }
 
@@ -218,7 +219,7 @@ button, .button {
     margin: 8px;
 }*/
 .edit-create-form {
-    margin-left: 5%;
+    margin-left: 11%;
 }
 
 .button {
@@ -242,7 +243,6 @@ input[type="submit"]:hover, .button:hover {
 /*CENTRAL*/
 #central {
     width: 100%;
-    height: 950px;
     float: right;
     border-left: 1px solid #ccc;
     box-shadow: -5px -1px 5px #ddd;
@@ -435,6 +435,9 @@ input[type="submit"]:hover, .button:hover {
 
 
 /*FOOTER*/
+footer{
+    width: 102%;
+}
 .fab {
     color: white;
 }
@@ -477,5 +480,6 @@ input[type="submit"]:hover, .button:hover {
 }
 
 /*Productos destacos*/
-
-
+.carousel-item img{
+    height:300px!important;
+}

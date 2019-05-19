@@ -43,10 +43,7 @@
                         <a class="yt-ic">
                             <i class="fab fa-youtube fa-lg  fa-2x"> </i>
                         </a>
-                        <a class="asli-ic" href="https://www.youtube.com/watch?v=h3QXWx-EVXc" target="_blank">
 
-                            <i class="fas fa-american-sign-language-interpreting fa-lg  mr-md-5 mr-3 ml-5 fa-2x"> </i>
-                        </a>
                     </div>
                 </div>
 

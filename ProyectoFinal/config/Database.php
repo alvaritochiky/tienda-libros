@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alvar
- * Date: 31/03/2019
- * Time: 20:52
- */
 
 class Database
 {

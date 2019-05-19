@@ -6,7 +6,7 @@ class productoController
     public function index()
     {
         $producto = new Producto();
-        $productos = $producto->getAll();
+        $productos = $producto->getDest();
         include_once "views/producto/destacados.php";
     }
     public function indexBooks()

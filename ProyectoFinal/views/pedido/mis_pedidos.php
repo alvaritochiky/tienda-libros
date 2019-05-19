@@ -3,13 +3,15 @@
 <?php else: ?>
     <h1>Mis pedidos</h1>
 <?php endif; ?>
-<table>
+<table class="table">
+    <thead class="black text-white">
     <tr>
         <th>Nº Pedido</th>
         <th>Coste</th>
         <th>Fecha</th>
         <th>Estado</th>
     </tr>
+    </thead>
     <?php
     while ($ped = $pedidos->fetch_object()):
         ?>
