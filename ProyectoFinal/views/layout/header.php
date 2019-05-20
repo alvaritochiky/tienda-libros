@@ -1,10 +1,13 @@
 <!doctype html>
 <html lang="es">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-
     <title>Tienda de Libros</title>
 
+
+    <!--Swipper-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
@@ -44,7 +47,7 @@
 <nav class="menuHeader success-color ">
     <nav class="navbar navbar-expand-xl navbar-dark ">
 
-        <a class="navbar-brand" href="index.php"><img src="assets/img/Logo.png">Nombre X</a>
+        <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png"><span class="ml-3 h4 ">Alvaro's Library</span></a>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -90,10 +93,10 @@
             </ul>
 
 
-            <form class="form-inline " action="index.php?controller=producto&action=buscarLibro" method="post">
-                <input class="form-control mr-sm-2 ml-sm-5" type="text" placeholder="Buscar libro" aria-label="Search"
+            <form class="form-inline" action="index.php?controller=producto&action=buscarLibro" method="post">
+                <input class="form-control" type="text" placeholder="Buscar libro" aria-label="Search"
                        name="searchBook">
-                <button class="btn btn-outline-white btn-rounded btn-sm my-0" type="submit">Buscar</button>
+                <button class="btn btn-outline-white btn-rounded btn-sm my-2" type="submit">Buscar</button>
             </form>
             <ul>
                 <?php $stats = Utils::statsCarrito(); ?>
@@ -302,7 +305,7 @@ if (isset($_SESSION["registro"]) && $_SESSION["registro"] == "complete") {
 }
 Utils::deleteSession("registro");
 ?>
-
 <div id="container">
     <!--/.Navbar-->
     <div id="content">
+        <div id="central">

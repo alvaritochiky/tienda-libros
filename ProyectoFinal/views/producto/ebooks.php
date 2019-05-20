@@ -11,7 +11,7 @@
     </select>
     <div col="5"></div>
 </div>
-<div class="productos example-1 square scrollbar-dusty-grass square thin row">
+<div class="row">
 
     <?php
     while ($product = $productos->fetch_object()) {

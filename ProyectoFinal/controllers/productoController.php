@@ -7,6 +7,8 @@ class productoController
     {
         $producto = new Producto();
         $productos = $producto->getDest();
+        $productosSales=$producto->getMoreSales();
+        $productosNew=$producto->getMoreNew();
         include_once "views/producto/destacados.php";
     }
     public function indexBooks()
@@ -21,6 +23,11 @@ class productoController
         $productos = $producto->getAllEbooks();
         include_once "views/producto/ebooks.php";
     }
+   /* public function sales(){
+        $productosSales=new Producto();
+        $productosSales=$productosSales->getMoreSales();
+        include_once "views/producto/destacados.php";
+    }*/
 
     public function ver()
     {

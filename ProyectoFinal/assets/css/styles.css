@@ -79,7 +79,7 @@ textarea {
 
 /*HEADER*/
 
- .menuHeader {
+.menuHeader {
     width: 102%;
 
 }
@@ -320,7 +320,7 @@ input[type="submit"]:hover, .button:hover {
     height: 300px;
     margin-bottom: 10px;
 
-   box-shadow: 4px 1px 4px 4px black;
+    box-shadow: 4px 1px 4px 4px black;
 
 }
 
@@ -408,7 +408,7 @@ input[type="submit"]:hover, .button:hover {
     width: 100px;
 }
 
-.items{
+.items {
     color: white;
     transition: 1s;
 }
@@ -435,9 +435,10 @@ input[type="submit"]:hover, .button:hover {
 
 
 /*FOOTER*/
-footer{
+footer {
     width: 102%;
 }
+
 .fab {
     color: white;
 }
@@ -470,16 +471,50 @@ footer{
     border-radius: 12px;
 }
 
-.btn{
+.btn {
     transition: 1s;
 }
-.btn:hover{
+
+.btn:hover {
     border-radius: 40px;
     box-shadow: 2px 2px 4px 4px black;
 
 }
 
-/*Productos destacos*/
-.carousel-item img{
-    height:300px!important;
+/*Carrousel main*/
+.carousel-item img {
+    height: 300px !important;
+}
+
+.swiper-container {
+    width: 80%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 238px;
+    height: 366px;
+}
+
+@media (max-width: 426px) {
+    .descriptionDest {
+        display: none;
+    }
+
+    .carousel-item img {
+        height: 100px !important;
+    }
+
+    .dest img {
+        height: 300px;
+        width: 100%;
+    }
+
+    .navbar {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

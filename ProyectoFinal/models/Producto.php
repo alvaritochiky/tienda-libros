@@ -154,9 +154,18 @@ class Producto
 
     public function getDest()
     {
-        $productos = $this->db->query("SELECT * FROM productos order by RAND() LIMIT 3");
+        $productos = $this->db->query("SELECT * FROM productos order by RAND() LIMIT 1");
         return $productos;
     }
+    public function getMoreSales(){
+        $productosSales = $this->db->query("SELECT * FROM productos order by rand() limit 10");
+        return $productosSales;
+    }
+    public function getMoreNew(){
+        $productosSales = $this->db->query("SELECT * FROM productos order by fecha limit 10");
+        return $productosSales;
+    }
+
     public function getAll()
     {
         $productos = $this->db->query("SELECT * FROM productos");
@@ -189,7 +198,6 @@ class Producto
             . "INNER JOIN genero on productos.genero_id=genero.id "
        . "WHERE productos.genero_id = {$this->getGeneroId()} ";
         $productos = $this->db->query($sql);
-        echo $this->db->error;
         return $productos;
     }
 

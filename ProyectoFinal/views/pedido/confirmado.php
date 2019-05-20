@@ -48,7 +48,7 @@ if (isset($_SESSION['pedido']) && $_SESSION['pedido'] == 'complete') {
                     </td>
                     <td>
                         <?php if ($producto->tipo != "fisico"): ?>
-                            <a href='#' class="text-success"> <?= $producto->tipo ?></a>
+                            <a href='<?php echo $producto->pdf ?>'download class="text-success"> <?= $producto->tipo ?></a>
                         <?php else: ?>
                             <?= $producto->tipo ?>
                         <?php endif; ?>
@@ -61,6 +61,7 @@ if (isset($_SESSION['pedido']) && $_SESSION['pedido'] == 'complete') {
                 /*$bbdd = new mysqli("localhost", "root", "", "tienda_libros");
                 $sql = "UPDATE productos SET stock='$totalStock' where id='$producto->id'";
                 $bbdd->query($sql);*/
+
             endwhile;
 
 

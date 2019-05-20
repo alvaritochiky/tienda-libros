@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <hr class="clearfix w-100 d-md-none pb-3">
-                <div class="col-lg-6 col-12 ml-4">
+                <div class="col-lg-6 col-12 ">
                     <div class="mb-5 flex-center">
 
                         <a class="fb-ic">
@@ -56,7 +56,28 @@
     </div>
 </footer>
 <!-- Footer -->
+<!-- Swiper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows : true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+</script>
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 

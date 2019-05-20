@@ -6,7 +6,7 @@ require_once 'config/parameters.php';
 include_once "config/Database.php";
 include_once "helpers/Utils.php";
 require_once 'views/layout/header.php';
-require_once 'views/layout/sidebar.php';
+
 
 function show_error()
 {
