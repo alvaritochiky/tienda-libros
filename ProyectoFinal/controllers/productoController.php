@@ -84,8 +84,10 @@ class productoController
             }
             move_uploaded_file($file["tmp_name"],"uploads/images".$filename);*/
             $producto->setImagen($filename);
-            $producto->setPdf($_POST["pdf"]);
+            $file1 = $_FILES["pdf"];
+            $filename1 = $file1["name"];
 
+            $producto->setPdf($filename1);
             if (isset($_GET["id"])) {
                 $id = $_GET["id"];
                 $producto->setId($id);

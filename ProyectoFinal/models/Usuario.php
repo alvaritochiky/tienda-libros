@@ -121,4 +121,20 @@ class Usuario
 
         return $result;
     }
+
+    public function getAllUsers(){
+        $usuarios = $this->db->query("SELECT * FROM usuarios where rol='user'");
+        return $usuarios;
+    }
+
+    public function deleteUser(){
+        $id = $this->getId();
+        $sql = "DELETE FROM usuarios WHERE id=$id";
+        $delete = $this->db->query($sql);
+        $result = false;
+        if ($delete) {
+            $result = true;
+        }
+        return $result;
+    }
 }

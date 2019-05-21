@@ -80,7 +80,7 @@ textarea {
 /*HEADER*/
 
 .menuHeader {
-    width: 102%;
+    width: 100%;
 
 }
 
@@ -320,7 +320,9 @@ input[type="submit"]:hover, .button:hover {
     height: 300px;
     margin-bottom: 10px;
 
-    box-shadow: 4px 1px 4px 4px black;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 
 }
 
@@ -436,7 +438,7 @@ input[type="submit"]:hover, .button:hover {
 
 /*FOOTER*/
 footer {
-    width: 102%;
+    width: 100%;
 }
 
 .fab {
@@ -466,6 +468,7 @@ footer {
 .fa-youtube:hover {
     color: #bb0000;
 }
+
 
 .btn {
     border-radius: 12px;
@@ -497,6 +500,14 @@ footer {
     background-size: cover;
     width: 238px;
     height: 366px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.dest img{
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 @media (max-width: 426px) {

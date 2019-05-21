@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <title>Tienda de Libros</title>
 
+<!--SweetAlert2-->
+
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>
+
 
     <!--Swipper-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
@@ -42,9 +47,13 @@
         });
 
     </script>
+
+
+
+
 </head>
 <body>
-<nav class="menuHeader success-color ">
+<nav class=" success-color menuHeader" id="menuHeader">
     <nav class="navbar navbar-expand-xl navbar-dark ">
 
         <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png"><span class="ml-3 h4 ">Alvaro's Library</span></a>
@@ -55,10 +64,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse " id="basicExampleNav">
+        <div  class="collapse navbar-collapse " id="basicExampleNav">
 
 
-            <ul class="navbar-nav mr-auto ml-5 ">
+            <ul  class="navbar-nav mr-auto ml-5 ">
                 <li class="nav-item mr-5">
                     <a class="nav-link" href="index.php"><i class="fas fa-home"></i>
                         <span class="sr-only">(current)</span>
@@ -123,7 +132,14 @@
             }
             if (isset($_SESSION["admin"])) {
                 ?>
+                <script>
 
+        let none=document.getElementById("basicExampleNav");
+                    //document.getElementById("basicExampleNav").style.visibility="hidden";
+        none.setAttribute("style", "display: none!important;");
+                    let bg=document.getElementById("menuHeader");
+                    bg.setAttribute("style", "background-color: #2BBBAD!important;");
+                </script>
                 <a class="dropdown-item" href="index.php?controller=producto&action=gestion">Gestionar productos</a>
                 <a class="dropdown-item" href="index.php?controller=pedido&action=gestion">Gestionar pedidos</a>
 
