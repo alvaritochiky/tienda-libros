@@ -47,10 +47,6 @@
         });
 
     </script>
-
-
-
-
 </head>
 <body>
 <nav class=" success-color menuHeader" id="menuHeader">
@@ -276,46 +272,29 @@
 if (isset($_SESSION["registro"]) && $_SESSION["registro"] == "complete") {
     ?>
     <script>
-        $(document).ready(function () {
-            $("#exampleModal").modal("show");
-        });
+
+        function showAlert() {
+            Swal.fire(
+                'Perfecto!',
+                'El usuario se ha creado correctamente!',
+                'success'
+            )
+        }
+
+        showAlert();
+
     </script>
 
-    <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog " role="document">
-            <div class="modal-content info-color-dark">
-                <div class="modal-header">
-                    <h5 class="modal-title " id="exampleModalLabel">Registro completado</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 <?php
 }elseif (isset($_SESSION["registro"]) && $_SESSION["registro"] == "failed"){
 ?>
     <script>
-        $(document).ready(function () {
-            $("#exampleModal").modal("show");
-        });
+       Swal.fire({
+           type: 'error',
+           title: 'Vaya',
+           text: 'El usuario no se ha podido crear',
+       })
     </script>
-
-    <div class="modal fade  " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog  " role="document">
-            <div class="modal-content  warning-color">
-                <div class="modal-header">
-                    <h5 class="modal-title " id="exampleModalLabel">Registro fallido</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
     <?php
 
 }
