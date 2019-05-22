@@ -52,7 +52,7 @@
 <nav class=" success-color menuHeader" id="menuHeader">
     <nav class="navbar navbar-expand-xl navbar-dark ">
 
-        <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png"><span class="ml-3 h4 ">Alvaro's Library</span></a>
+        <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png"><span class="ml-3 h4 ">BookShop</span></a>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -60,26 +60,26 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div  class="collapse navbar-collapse " id="basicExampleNav">
+        <div  class="collapse navbar-collapse ml-3" id="basicExampleNav">
 
 
-            <ul  class="navbar-nav mr-auto ml-5 ">
-                <li class="nav-item mr-5">
+            <ul  class="navbar-nav mr-auto ">
+                <li class="nav-item mr-2">
                     <a class="nav-link" href="index.php"><i class="fas fa-home"></i>
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item mr-5">
+                <li class="nav-item mr-2">
                     <a class="nav-link" href="index.php?controller=producto&action=indexBooks" class="items"><span
                                 class="items">Libros</a></span>
                 </li>
-                <li class="nav-item mr-5">
+                <li class="nav-item mr-2">
                     <a class="nav-link" href="index.php?controller=producto&action=indexEbooks" class="items"><span
                                 class="items">eBook</a></span>
                 </li>
 
                 <!-- Dropdown -->
-                <li class="nav-item dropdown  mr-5">
+                <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false"><span class="items">Generos</span></a>
                     <div class="dropdown-menu dropdown-primary green accent-3" aria-labelledby="navbarDropdownMenuLink">
@@ -98,14 +98,14 @@
             </ul>
 
 
-            <form class="form-inline" action="index.php?controller=producto&action=buscarLibro" method="post">
+            <form class="form-inline mr-3" action="index.php?controller=producto&action=buscarLibro" method="post">
                 <input class="form-control" type="text" placeholder="Buscar libro" aria-label="Search"
                        name="searchBook">
                 <button class="btn btn-outline-white btn-rounded btn-sm my-2" type="submit">Buscar</button>
             </form>
             <ul>
                 <?php $stats = Utils::statsCarrito(); ?>
-                <li class="list-unstyled mt-3 ml-5"><a href="index.php?controller=carrito&action=index" id="carr"
+                <li class="list-unstyled mt-3 mr-2"><a href="index.php?controller=carrito&action=index" id="carr"
                                                        class="white-text"><i
                                 class="fas fa-shopping-cart mt-2 text-dark"></i>(<?php echo $stats["count"] ?>)</a></li>
 
@@ -113,7 +113,7 @@
             <?php
             if (!isset($_SESSION["identity"])) {
                 ?>
-                <div class="nav navbar-nav col-lg-2 col-md-3 col-sm-4 ml-sm-5">
+                <div class="nav navbar-nav">
                     <a href="" class="btn danger-color   text-white" data-toggle="modal" data-target="#modalLoginForm">Iniciar
                         sesion</a>
                 </div>
