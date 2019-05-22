@@ -31,6 +31,7 @@ function a(){
 }
 Utils::deleteSession("delete");
 ?>
+<i class="fas fa-arrow-left fa-2x"></i><span class="h2">ATRAS</span>
 <table class="table ">
     <thead class="black white-text">
     <tr>

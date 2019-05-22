@@ -110,7 +110,7 @@ if (!isset($_SESSION["admin"])) {
 
         document.getElementById("basicExampleNav").style.visibility="hidden";
     </script>
-    <h1>    Gestiones del administrador</h1>
+    <h1 class="ml-5">Gestiones del administrador</h1>
     <div class="containter">
         <div class="row"></div>
         <div class="row"></div>
@@ -118,20 +118,26 @@ if (!isset($_SESSION["admin"])) {
         <div class="row"></div>
         <div class="row">
             <div class="col-4"></div>
+            <a href='index.php?controller=usuario&action=listar' class='btn default-color disabled text-white col-4 m-5 p-4'
+               id='btn-prod'><span class="h4">Gestionar generos <i class="fas fa-bars fa-lg"></i></span></a>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
             <a href='index.php?controller=usuario&action=listar' class='btn default-color text-white col-4 m-5 p-4'
-               id='btn-prod'><span class="h4">Gestionar usuarios</span></a>
+               id='btn-prod'><span class="h4">Gestionar usuarios <i class="fas fa-users fa-lg"></i></span></a>
             <div class="col-4"></div>
         </div>
         <div class="row">
             <div class="col-4"></div>
             <a href='index.php?controller=producto&action=gestion' class='btn default-color text-white col-4 m-5 p-4'
-               id='btn-prod'><span class="h4">Gestionar productos</span></a>
+               id='btn-prod'><span class="h4">Gestionar productos <i class="fas fa-book fa-lg"></i></span></a>
             <div class="col-4"></div>
         </div>
         <div class="row">
             <div class="col-4"></div>
             <a href='index.php?controller=pedido&action=gestion' class='btn default-color text-white col-4 m-5 p-4'
-               id='btn-prod'><span class="h4">Gestionar pedidos</span></a>
+               id='btn-prod'><span class="h4">Gestionar pedidos <i class="fas fa-shopping-cart fa-lg"></i></span></a>
             <div class="col-4"></div>
         </div>
         <div class="row">

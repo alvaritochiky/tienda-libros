@@ -52,7 +52,7 @@
 <nav class=" success-color menuHeader" id="menuHeader">
     <nav class="navbar navbar-expand-xl navbar-dark ">
 
-        <a class="navbar-brand" href="index.php"><img src="assets/img/logo.png"><span class="ml-3 h4 ">BookShop</span></a>
+        <a class="navbar-brand" href="index.php"><img src="assets/img/Logo.png"><span class="ml-3 h4 ">BookShop</span></a>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"

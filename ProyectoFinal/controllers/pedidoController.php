@@ -1,5 +1,5 @@
 <?php
-include_once "models/pedido.php";
+include_once "models/Pedido.php";
 
 class pedidoController
 {
