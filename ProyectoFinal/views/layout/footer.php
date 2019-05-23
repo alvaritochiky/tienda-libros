@@ -8,6 +8,7 @@
         <div class="col-10">
             <div class="row">
                 <div class="col-lg-5 col-sm-12 ml-4 p-4">
+                    <h2>Quienes somos</h2>
                     <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequuntur debitis dignissimos
                         doloremque, eaque exercitationem laudantium minima quae repellat sit suscipit tempore totam
                         vitae?
@@ -21,6 +22,7 @@
                 </div>
                 <hr class="clearfix w-100 d-md-none pb-3">
                 <div class="col-lg-6 col-12 ">
+
                     <div class="mb-5 flex-center">
 
                         <a class="fb-ic">
@@ -71,7 +73,7 @@
             stretch: 0,
             depth: 100,
             modifier: 1,
-            slideShadows : true,
+            slideShadows: true,
         },
         pagination: {
             el: '.swiper-pagination',

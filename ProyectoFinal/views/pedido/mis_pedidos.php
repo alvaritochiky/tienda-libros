@@ -3,33 +3,37 @@
 <?php else: ?>
     <h1>Mis pedidos</h1>
 <?php endif; ?>
-<table class="table">
-    <thead class="black text-white">
-    <tr>
-        <th>Nº Pedido</th>
-        <th>Coste</th>
-        <th>Fecha</th>
-        <th>Estado</th>
-    </tr>
-    </thead>
-    <?php
-    while ($ped = $pedidos->fetch_object()):
-        ?>
-
+<a href="javascript:window.history.back();"><i class="fas fa-arrow-left fa-2x"></i><span class="h2">ATRÁS</span><!--<img src="assets/img/back-arrow.gif" width="100px" height="75px">ATRAS--></a>
+<br><br>
+<div class="table-responsive">
+    <table class="table">
+        <thead class="black text-white">
         <tr>
-            <td>
-                <a href="index.php?controller=pedido&action=detalle&id=<?= $ped->id ?>"><?= $ped->id ?></a>
-            </td>
-            <td>
-                <?= $ped->coste ?> €
-            </td>
-            <td>
-                <?= $ped->fecha ?>
-            </td>
-            <td>
-                <?=Utils::showStatus($ped->estado)?>
-            </td>
+            <th>Nº Pedido</th>
+            <th>Coste</th>
+            <th>Fecha</th>
+            <th>Estado</th>
         </tr>
+        </thead>
+        <?php
+        while ($ped = $pedidos->fetch_object()):
+            ?>
 
-    <?php endwhile; ?>
-</table>
+            <tr>
+                <td>
+                    <a href="index.php?controller=pedido&action=detalle&id=<?= $ped->id ?>"><?= $ped->id ?></a>
+                </td>
+                <td>
+                    <?= $ped->coste ?> €
+                </td>
+                <td>
+                    <?= $ped->fecha ?>
+                </td>
+                <td>
+                    <?= Utils::showStatus($ped->estado) ?>
+                </td>
+            </tr>
+
+        <?php endwhile; ?>
+    </table>
+</div>

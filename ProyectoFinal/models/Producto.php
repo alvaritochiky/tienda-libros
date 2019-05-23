@@ -266,8 +266,8 @@ class Producto
     public function searchBook()
     {
 
-        $productos = $this->db->query("SELECT * FROM productos WHERE nombre='$this->nombre'");
-        return $productos->fetch_object();
+        $productos = $this->db->query("SELECT * FROM productos WHERE nombre='$this->nombre' UNION ALL SELECT * FROM productos WHERE autor='$this->autor'");
+        return $productos;
 
 
     }

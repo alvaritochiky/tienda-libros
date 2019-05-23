@@ -49,7 +49,6 @@ class productoController
         $producto = new Producto();
 
         $producto = $producto->getAll();
-
         include_once "views/producto/gestion.php";
     }
 
@@ -155,8 +154,10 @@ class productoController
         if (isset($_POST)) {
             if ($_POST["searchBook"] != "") {
                 $nombre=$_POST["searchBook"];
+                $autor=$_POST["searchBook"];
                 $producto = new Producto();
                 $producto->setNombre($nombre);
+                $producto->setAutor($autor);
                 $product = $producto->searchBook();
 
                 include_once "views/producto/search.php";

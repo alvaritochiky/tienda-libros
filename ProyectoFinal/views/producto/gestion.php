@@ -1,4 +1,6 @@
 <h1>Gestion de productos</h1>
+<a href="javascript:window.history.back();"><i class="fas fa-arrow-left fa-2x"></i><span class="h2">ATRÁS</span><!--<img src="assets/img/back-arrow.gif" width="100px" height="75px">ATRAS--></a>
+<br><br>
 <a href="index.php?controller=producto&action=crear" class="btn btn-success text-white mb-5">
     Crear producto
 </a>
@@ -66,36 +68,38 @@ Utils::deleteSession("producto");
 Utils::deleteSession("delete");
 ?>
 
-<table class="table ">
-    <thead class="black white-text">
-    <tr>
-        <th>ID</th>
-        <th>NOMBRE</th>
-        <th>PRECIO</th>
-        <th>STOCK</th>
-        <th>Formato</th>
-        <th>ACCIONES</th>
-    </tr>
-    </thead>
-    <?php
-    while ($resultado = $producto->fetch_object()) {
-        echo "<tr>";
-        foreach ($producto as $dat => $val) {
+<div class="table-responsive">
+    <table class="table ">
+        <thead class="black white-text">
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>PRECIO</th>
+            <th>STOCK</th>
+            <th>Formato</th>
+            <th>ACCIONES</th>
+        </tr>
+        </thead>
+        <?php
+        while ($resultado = $producto->fetch_object()) {
+            echo "<tr>";
+            foreach ($producto as $dat => $val) {
 
-            echo "<td>" . $val["id"] . "</td>";
-            echo "<td>" . $val["nombre"] . "</td>";
-            echo "<td>" . $val["precio"] . "€</td>";
-            echo "<td>" . $val["stock"] . "</td>";
-            echo "<td>" . $val["tipo"] . "</td>";
-            echo "<td>";
-            echo "<a href='index.php?controller=producto&action=editar&id=" . $val["id"] . "' class='btn btn-success text-white mr-2'>Editar</a>";
-            echo "<a href='index.php?controller=producto&action=eliminar&id=" . $val["id"] . "' class='btn btn-danger text-white'>Eliminar</a>";
-            echo "</td>";
+                echo "<td>" . $val["id"] . "</td>";
+                echo "<td>" . $val["nombre"] . "</td>";
+                echo "<td>" . $val["precio"] . "€</td>";
+                echo "<td>" . $val["stock"] . "</td>";
+                echo "<td>" . $val["tipo"] . "</td>";
+                echo "<td>";
+                echo "<a href='index.php?controller=producto&action=editar&id=" . $val["id"] . "' class='btn btn-success text-white mr-2'>Editar</a>";
+                echo "<a href='index.php?controller=producto&action=eliminar&id=" . $val["id"] . "' class='btn btn-danger text-white'>Eliminar</a>";
+                echo "</td>";
+                echo "</tr>";
+            }
             echo "</tr>";
         }
-        echo "</tr>";
-    }
-    ?>
+        ?>
 
-</table>
+    </table>
+</div>
 

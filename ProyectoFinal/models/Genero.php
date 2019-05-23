@@ -44,5 +44,14 @@ class Genero
         $generos = $this->db->query("SELECT * FROM genero WHERE id={$this->getId()}");
         return $generos->fetch_object();
     }
+    public function save(){
+        $sql = "INSERT INTO genero VALUES(NULL, '{$this->getNombre()}');";
+        $save = $this->db->query($sql);
 
+        $result = false;
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
 }

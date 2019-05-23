@@ -3,6 +3,7 @@
 
     <?php if (isset($_SESSION['carrito']) && count($_SESSION['carrito']) >= 1) {
         ?>
+    <div class="table-responsive">
         <table class="table">
             <thead class="black text-white">
             <tr>
@@ -82,6 +83,7 @@
                 <?php
             } ?>
         </table>
+    </div>
         <div class="delete-carrito">
             <a href="index.php?controller=carrito&action=delete_all" class='btn btn-success text-white'">Vaciar
             carrito</a>

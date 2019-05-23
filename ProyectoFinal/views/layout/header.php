@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Tienda de Libros</title>
 
-<!--SweetAlert2-->
+    <!--SweetAlert2-->
 
     <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>
@@ -52,18 +52,19 @@
 <nav class=" success-color menuHeader" id="menuHeader">
     <nav class="navbar navbar-expand-xl navbar-dark ">
 
-        <a class="navbar-brand" href="index.php"><img src="assets/img/Logo.png"><span class="ml-3 h4 ">BookShop</span></a>
+        <a class="navbar-brand" href="index.php"><img src="assets/img/Logo.png"><span class="ml-3 h4 ">La Libreria de Papá</span></a>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                id="navbar-toggler"
                 aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div  class="collapse navbar-collapse ml-3" id="basicExampleNav">
+        <div class="collapse navbar-collapse ml-3" id="basicExampleNav">
 
 
-            <ul  class="navbar-nav mr-auto ">
+            <ul class="navbar-nav mr-auto ">
                 <li class="nav-item mr-2">
                     <a class="nav-link" href="index.php"><i class="fas fa-home"></i>
                         <span class="sr-only">(current)</span>
@@ -129,11 +130,11 @@
             if (isset($_SESSION["admin"])) {
                 ?>
                 <script>
-
-        let none=document.getElementById("basicExampleNav");
-                    //document.getElementById("basicExampleNav").style.visibility="hidden";
-        none.setAttribute("style", "display: none!important;");
-                    let bg=document.getElementById("menuHeader");
+                    let none2 = document.getElementById("navbar-toggler");
+                    let none = document.getElementById("basicExampleNav");
+                    none.setAttribute("style", "display: none!important;");
+                    none2.setAttribute("style", "display: none!important;");
+                    let bg = document.getElementById("menuHeader");
                     bg.setAttribute("style", "background-color: #2BBBAD!important;");
                 </script>
                 <a class="dropdown-item" href="index.php?controller=producto&action=gestion">Gestionar productos</a>
@@ -156,7 +157,6 @@
         } ?>
 
         </div>
-
 
         <div class="modal fade " id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true">
@@ -191,7 +191,6 @@
                                 <label for="defaultForm-pass" class="text-success">Contraseña</label>
                                 <hr>
                             </div>
-
 
                         </div>
                         <div class="d-flex justify-content-center mb-4">
@@ -252,7 +251,7 @@
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="defaultChecked2">
+                        <input type="checkbox" class="custom-control-input" id="defaultChecked2" required>
                         <label class="custom-control-label" for="defaultChecked2">Aceptar terminos y condiciones</label>
                     </div>
 
@@ -289,11 +288,11 @@ if (isset($_SESSION["registro"]) && $_SESSION["registro"] == "complete") {
 }elseif (isset($_SESSION["registro"]) && $_SESSION["registro"] == "failed"){
 ?>
     <script>
-       Swal.fire({
-           type: 'error',
-           title: 'Vaya',
-           text: 'El usuario no se ha podido crear',
-       })
+        Swal.fire({
+            type: 'error',
+            title: 'Vaya',
+            text: 'El usuario no se ha podido crear',
+        })
     </script>
     <?php
 

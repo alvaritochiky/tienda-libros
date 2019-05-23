@@ -30,4 +30,18 @@ class generoController
             include_once 'views/genero/ver.php';
         }
     }
+    public function crear(){
+
+        require_once 'views/genero/crear.php';
+    }
+    public function save(){
+
+        if(isset($_POST) && isset($_POST['nombre'])){
+            // Guardar la categoria en bd
+            $genero = new Genero();
+            $genero->setNombre($_POST['nombre']);
+            $save = $genero->save();
+        }
+        header("Location:index.php");
+    }
 }

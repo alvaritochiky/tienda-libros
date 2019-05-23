@@ -29,33 +29,37 @@
     Total a pagar: <?= $pedido->coste ?> € <br/>
     Productos:
 
-    <table>
-        <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Unidades</th>
-        </tr>
-        <?php while ($producto = $productos->fetch_object()): ?>
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="black text-white">
             <tr>
-                <td>
-                    <?php if ($producto->imagen != null): ?>
-                        <img src="<?= $producto->imagen ?>" class="img_carrito"/>
-                    <?php else: ?>
-                        <img src="assets/img/Logo.png" class="img_carrito"/>
-                    <?php endif; ?>
-                </td>
-                <td>
-                    <a href="index.php?controller=producto&action=ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
-                </td>
-                <td>
-                    <?= $producto->precio ?>
-                </td>
-                <td>
-                    <?= $producto->unidades ?>
-                </td>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Unidades</th>
             </tr>
-        <?php endwhile; ?>
-    </table>
+            </thead>
+            <?php while ($producto = $productos->fetch_object()): ?>
+                <tr>
+                    <td>
+                        <?php if ($producto->imagen != null): ?>
+                            <img src="<?= $producto->imagen ?>" class="img_carrito"/>
+                        <?php else: ?>
+                            <img src="assets/img/Logo.png" class="img_carrito"/>
+                        <?php endif; ?>
+                    </td>
+                    <td>
+                        <a href="index.php?controller=producto&action=ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
+                    </td>
+                    <td>
+                        <?= $producto->precio ?>
+                    </td>
+                    <td>
+                        <?= $producto->unidades ?>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
 
 <?php endif; ?>
