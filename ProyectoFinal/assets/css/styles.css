@@ -17,7 +17,6 @@ a {
     text-decoration: none;
 }
 
-
 a:visited {
     color: #00C851;
 }
@@ -48,7 +47,6 @@ td .button-red {
     margin-bottom: 10px;
 }
 
-
 table {
     text-align: center;
     width: 100%;
@@ -68,20 +66,21 @@ textarea {
     resize: none;
 }
 
+
 /*CONTAINER*/
+
 #container {
     width: 80%;
     margin: 0px auto;
     box-shadow: 0px 0px 10px gray;
     background: white;
-
 }
+
 
 /*HEADER*/
 
 .menuHeader {
     width: 100%;
-
 }
 
 .navbar {
@@ -90,26 +89,25 @@ textarea {
     box-shadow: none;
 }
 
-
 .menuHeader img {
     height: 60px;
     width: 80px;
 }
 
-/*CONTENT*/
-#content {
 
+/*CONTENT*/
+
+#content {
     overflow: hidden;
     background: white;
     margin-bottom: 20px;
     margin-top: 20px;
-
 }
 
 #pdf {
     background-color: white;
-
 }
+
 
 /*BARRA LATERAL
 #lateral {
@@ -152,17 +150,19 @@ textarea {
     margin-bottom: 5px;
 }
 */
-.fa-shopping-cart, #carr {
+
+.fa-shopping-cart,
+#carr {
     font-size: 25px;
-
-
 }
 
 
 /*FORMS*/
+
 .form_container {
     width: 100%;
 }
+
 
 /*input[type="text"],
 input[type="password"],
@@ -188,11 +188,13 @@ select, textarea {
     transition: all 300ms;
 }
 */
+
 .form-inline input[type="text"]:focus {
     border: 1px solid black;
     color: black;
     box-shadow: none;
 }
+
 
 /*
 input[type="text"]:focus,
@@ -200,6 +202,7 @@ input[type="password"]:focus,
 input[type="email"]:focus {
 
 }*/
+
 
 /*input[type="button"],
 input[type="submit"],
@@ -218,6 +221,7 @@ button, .button {
     border-radius: 15px;
     margin: 8px;
 }*/
+
 .edit-create-form {
     margin-left: 11%;
 }
@@ -226,7 +230,6 @@ button, .button {
     background: #00C851;
     color: white !important;
     text-decoration: none;
-
 }
 
 .button-small {
@@ -235,20 +238,20 @@ button, .button {
     margin-bottom: 20px;
 }
 
-input[type="submit"]:hover, .button:hover {
+input[type="submit"]:hover,
+.button:hover {
     background-color: #2979CD;
 }
 
 
 /*CENTRAL*/
+
 #central {
     width: 100%;
     float: right;
     border-left: 1px solid #ccc;
     box-shadow: -5px -1px 5px #ddd;
     padding: 25px;
-
-
 }
 
 #central h1 {
@@ -269,7 +272,6 @@ input[type="submit"]:hover, .button:hover {
     background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
 }
 
-
 .square::-webkit-scrollbar-track {
     border-radius: 0 !important;
 }
@@ -285,11 +287,12 @@ input[type="submit"]:hover, .button:hover {
 .example-1 {
     position: relative;
     overflow-y: scroll;
-
     height: 800px;
 }
 
+
 /*PRODUCTOS*/
+
 .product {
     width: 30%;
     padding-top: 40px;
@@ -298,8 +301,6 @@ input[type="submit"]:hover, .button:hover {
     margin-right: 10px;
     text-align: center;
     margin-bottom: 30px;
-
-
 }
 
 .product a {
@@ -319,11 +320,9 @@ input[type="submit"]:hover, .button:hover {
 .product img {
     height: 300px;
     margin-bottom: 10px;
-
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .img_carrito {
@@ -335,7 +334,6 @@ input[type="submit"]:hover, .button:hover {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 
 #detail-product {
     width: 100%;
@@ -351,7 +349,6 @@ input[type="submit"]:hover, .button:hover {
     display: block;
     width: 50%;
     float: left;
-
 }
 
 #detail-product .data {
@@ -373,6 +370,7 @@ input[type="submit"]:hover, .button:hover {
     width: 200px;
     text-align: center;
 }
+
 
 /*CARRITO*/
 
@@ -418,9 +416,8 @@ input[type="submit"]:hover, .button:hover {
 .items:hover {
     border-bottom: dotted white 2px;
     font-size: 22px;
-
-
 }
+
 
 /*.updown-unidades {
     width: 80px;
@@ -437,6 +434,7 @@ input[type="submit"]:hover, .button:hover {
 
 
 /*FOOTER*/
+
 footer {
     width: 100%;
 }
@@ -461,14 +459,11 @@ footer {
     background: linear-gradient(rgb(254, 218, 117), rgb(250, 126, 30), rgb(214, 41, 118), rgb(150, 47, 191), rgb(79, 91, 213));
     -webkit-background-clip: text;
     color: transparent;
-
-
 }
 
 .fa-youtube:hover {
     color: #bb0000;
 }
-
 
 .btn {
     border-radius: 12px;
@@ -481,10 +476,11 @@ footer {
 .btn:hover {
     border-radius: 40px;
     box-shadow: 2px 2px 4px 4px black;
-
 }
 
+
 /*Carrousel main*/
+
 .carousel-item img {
     height: 300px !important;
 }
@@ -500,31 +496,28 @@ footer {
     background-size: cover;
     width: 238px;
     height: 366px;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
-.dest img{
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+
+.dest img {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 @media (max-width: 426px) {
-
     .descriptionDest {
         display: none;
     }
-
     .carousel-item img {
         height: 100px !important;
     }
-
     .dest img {
         height: 300px;
         width: 100%;
     }
-
     .navbar {
         margin-left: 0;
         margin-right: 0;

@@ -266,15 +266,9 @@ class Producto
     public function searchBook()
     {
 
-        $productos = $this->db->query("SELECT * FROM productos WHERE nombre='$this->nombre' UNION ALL SELECT * FROM productos WHERE autor='$this->autor'");
+        $productos = $this->db->query("SELECT * FROM productos WHERE nombre='$this->nombre' OR  autor='$this->autor'");
         return $productos;
 
 
     }
-
-    function stockDel()
-    {
-        echo "hola";
-    }
-
 }

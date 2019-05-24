@@ -152,6 +152,7 @@ class productoController
     function buscarLibro()
     {
         if (isset($_POST)) {
+
             if ($_POST["searchBook"] != "") {
                 $nombre=$_POST["searchBook"];
                 $autor=$_POST["searchBook"];
@@ -159,7 +160,8 @@ class productoController
                 $producto->setNombre($nombre);
                 $producto->setAutor($autor);
                 $product = $producto->searchBook();
-
+                
+            
                 include_once "views/producto/search.php";
             } else {
                 header("location:index.php");

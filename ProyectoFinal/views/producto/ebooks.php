@@ -1,13 +1,14 @@
+<script src='assets/JS/Select.js'></script>
 <h1>Ebook</h1>
 
 <div class="row">
     <div class="col-5"></div>
-    <select class="browser-default custom-select w-25 col-2 ">
+    <select class="browser-default custom-select w-25 col-2 " name='filters' onchange='testFilt(this.value)'>
         <option selected disabled>Ordenar por:</option>
-        <option value="1">Destacados</option>
-        <option value="2">Precio: de mas bajo a mas alto</option>
-        <option value="3">Precio: de mas alto a mas bajo</option>
-        <option value="4">Alfabeticamente</option>
+        <option value="destE">Destacados</option>
+        <option value="LessMoreE">Precio: de mas bajo a mas alto</option>
+        <option value="MoreLessE">Precio: de mas alto a mas bajo</option>
+        <option value="alphaE">Alfabeticamente</option>
     </select>
     <div col="5"></div>
 </div>

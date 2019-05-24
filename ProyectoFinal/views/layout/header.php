@@ -49,6 +49,22 @@
     </script>
 </head>
 <body>
+<?php
+if(isset($_SESSION['error_login'])){
+    ?>
+    
+    <script>
+
+    Swal.fire({
+        type: 'error',
+        title: 'Vaya',
+        text: 'Usuario o contraseña incorrecto',
+    })
+</script>
+<?php
+Utils::deleteSession("error_login");
+}
+?>
 <nav class=" success-color menuHeader" id="menuHeader">
     <nav class="navbar navbar-expand-xl navbar-dark ">
 
