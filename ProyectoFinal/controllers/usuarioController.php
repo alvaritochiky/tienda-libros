@@ -52,14 +52,16 @@ class usuarioController
             }
 
         }
-        
-        
+
+
         header("location:index.php");
 
     }
 
     public function logout()
     {
+
+
         if (isset($_SESSION["identity"])) {
             unset($_SESSION["identity"]);
         }
@@ -69,40 +71,41 @@ class usuarioController
         header("location:index.php");
     }
 
-    public function listar(){
-        $usuario=new Usuario();
+    public function listar()
+    {
+        $usuario = new Usuario();
 
-        $usuarios=$usuario->getAllUsers();
-
+        $usuarios = $usuario->getAllUsers();
 
 
         include_once "views/usuario/listar.php";
     }
 
-    public function delete(){
+    public function delete()
+    {
 
 
-            //Llamar al metodo Utils::isAdmin que tengo que crear
+        //Llamar al metodo Utils::isAdmin que tengo que crear
 
 
-            if (isset($_GET['id'])) {
+        if (isset($_GET['id'])) {
 
-                $id = $_GET['id'];
-                $usuario = new Usuario();
-                $usuario->setId($id);
+            $id = $_GET['id'];
+            $usuario = new Usuario();
+            $usuario->setId($id);
 
-                $delete = $usuario->deleteUser();
-                if ($delete) {
+            $delete = $usuario->deleteUser();
+            if ($delete) {
 
-                    $_SESSION['delete'] = 'complete';
-                } else {
-                    $_SESSION['delete'] = 'failed';
-                }
+                $_SESSION['delete'] = 'complete';
             } else {
                 $_SESSION['delete'] = 'failed';
             }
-
-            header('Location:index.php?controller=usuario&action=listar');
+        } else {
+            $_SESSION['delete'] = 'failed';
         }
+
+        header('Location:index.php?controller=usuario&action=listar');
+    }
 
 }

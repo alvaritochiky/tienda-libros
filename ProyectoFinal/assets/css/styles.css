@@ -109,48 +109,6 @@ textarea {
 }
 
 
-/*BARRA LATERAL
-#lateral {
-    width: 14%;
-    min-height: 700px;
-    float: left;
-    margin-top: 20px;
-    margin-left: 10px;
-}
-
-#lateral .block_aside {
-    display: block;
-    width: 90%;
-    margin: 5px auto;
-    padding: 10px;
-}
-
-#lateral h3 {
-    display: block;
-    color: #222;
-    width: 100%;
-    text-align: center;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    background: #E1E1E1;
-    border-bottom: 2px solid #00C851;
-}
-
-#lateral ul {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-#lateral ul li {
-    margin-left: 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-*/
-
 .fa-shopping-cart,
 #carr {
     font-size: 25px;
@@ -164,63 +122,12 @@ textarea {
 }
 
 
-/*input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-select, textarea {
-    display: block;
-    width: 95%;
-    margin: 8px;
-    font-size: 16px;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-select, textarea {
-    border: 1px solid #C9C9C9;
-    box-shadow: 0px 0px 2px #ccc inset;
-    background: white;
-    padding: 2px;
-    color: gray;
-    transition: all 300ms;
-}
-*/
-
 .form-inline input[type="text"]:focus {
     border: 1px solid black;
     color: black;
     box-shadow: none;
 }
 
-
-/*
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus {
-
-}*/
-
-
-/*input[type="button"],
-input[type="submit"],
-button, .button {
-    display: block;
-    border-radius: 2px;
-    width: auto;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: white;
-    background: #00C851;
-    border: 1px solid #11608E;
-    cursor: pointer;
-    transition: 700ms;
-    border-radius: 15px;
-    margin: 8px;
-}*/
 
 .edit-create-form {
     margin-left: 11%;
@@ -419,18 +326,6 @@ input[type="submit"]:hover,
 }
 
 
-/*.updown-unidades {
-    width: 80px;
-    margin: 0px auto;
-}
-
-.updown-unidades .button {
-    display: block;
-    width: 20px;
-    float: left;
-    padding: 2px;
-    margin: 7px;
-}*/
 
 
 /*FOOTER*/
@@ -521,5 +416,8 @@ footer {
     .navbar {
         margin-left: 0;
         margin-right: 0;
+    }
+    .titulo{
+        font-size: 14px;
     }
 }

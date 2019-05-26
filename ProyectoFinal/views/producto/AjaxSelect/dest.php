@@ -1,8 +1,5 @@
 
-<script src='assets/JS/Select.js'>
 
-
-</script>
 <h1>Libros</h1>
 
 <div class="row">

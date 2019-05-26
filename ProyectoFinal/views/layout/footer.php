@@ -9,15 +9,9 @@
             <div class="row">
                 <div class="col-lg-5 col-sm-12 ml-4 p-4">
                     <h2>Quienes somos</h2>
-                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequuntur debitis dignissimos
-                        doloremque, eaque exercitationem laudantium minima quae repellat sit suscipit tempore totam
-                        vitae?
-                        Distinctio ipsam perferendis sequi totam vel?
-                    </div>
-                    <div>Accusamus amet, aperiam architecto consequatur deleniti deserunt dolores eius et exercitationem
-                        fugit inventore minus neque nesciunt nihil quam quibusdam, repudiandae rerum soluta vero
-                        voluptates?
-                        Fugit, iusto, numquam? Cum, natus, vitae.
+                    <div>
+                        En La librería de Papá llevamos más de un año trabajando para ofrecer a nuestros clientes el mejor
+                        servicio
                     </div>
                 </div>
                 <hr class="clearfix w-100 d-md-none pb-3">

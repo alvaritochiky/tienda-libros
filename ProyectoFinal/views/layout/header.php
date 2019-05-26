@@ -9,7 +9,7 @@
 
     <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>
-
+    <script src='assets/JS/Select.js'></script>
 
     <!--Swipper-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
@@ -68,7 +68,7 @@ Utils::deleteSession("error_login");
 <nav class=" success-color menuHeader" id="menuHeader">
     <nav class="navbar navbar-expand-xl navbar-dark ">
 
-        <a class="navbar-brand" href="index.php"><img src="assets/img/Logo.png"><span class="ml-3 h4 ">La Libreria de Papá</span></a>
+        <a class="navbar-brand" href="index.php"><img src="assets/img/Logo.png"><span class="titulo ml-3 h4 ">La Librería de Papá</span></a>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -98,7 +98,7 @@ Utils::deleteSession("error_login");
                 <!-- Dropdown -->
                 <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false"><span class="items">Generos</span></a>
+                       aria-haspopup="true" aria-expanded="false"><span class="items">Géneros</span></a>
                     <div class="dropdown-menu dropdown-primary green accent-3" aria-labelledby="navbarDropdownMenuLink">
                         <?php $genero = Utils::showGeneros(); ?>
                         <!--<a class="dropdown-item" href="index.php?controller=genero&action=show" >Romantica</a>
@@ -116,7 +116,7 @@ Utils::deleteSession("error_login");
 
 
             <form class="form-inline mr-3" action="index.php?controller=producto&action=buscarLibro" method="post">
-                <input class="form-control" type="text" placeholder="Buscar libro" aria-label="Search"
+                <input class="form-control" type="text" placeholder="Buscar libro,autor" aria-label="Search"
                        name="searchBook">
                 <button class="btn btn-outline-white btn-rounded btn-sm my-2" type="submit">Buscar</button>
             </form>
@@ -132,7 +132,7 @@ Utils::deleteSession("error_login");
                 ?>
                 <div class="nav navbar-nav">
                     <a href="" class="btn danger-color   text-white" data-toggle="modal" data-target="#modalLoginForm">Iniciar
-                        sesion</a>
+                        sesión</a>
                 </div>
                 <?php
 
@@ -164,7 +164,7 @@ Utils::deleteSession("error_login");
             ?>
             <a class="dropdown-item" href="index.php?controller=pedido&action=mis_pedidos">Mis pedidos</a>
             <a class="dropdown-item" href="#">Editar perfil</a>
-            <a class="dropdown-item" href="index.php?controller=usuario&action=logout">Cerrar Sesion</a>
+            <a class="dropdown-item" href="index.php?controller=usuario&action=logout">Cerrar Sesión</a>
 
 
         </div>
@@ -182,7 +182,7 @@ Utils::deleteSession("error_login");
                 <div class="modal-content">
 
                     <div class="modal-header text-center success-color">
-                        <h4 class="modal-title w-100 font-weight-bold">Iniciar Sesion</h4>
+                        <h4 class="modal-title w-100 font-weight-bold">Iniciar Sesión</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
