@@ -68,10 +68,11 @@ if (isset($_SESSION['pedido']) && $_SESSION['pedido'] == 'complete') {
 
                 <?php
                     //Mejorar esta puta mierda
-                    //$totalStock = $producto->stock - $producto->unidades;
-                    /*$bbdd = new mysqli("localhost", "root", "", "tienda_libros");
+                    $totalStock = $producto->stock - $producto->unidades;
+                    $bbdd = new mysqli("localhost", "root", "", "tienda_libros");
                     $sql = "UPDATE productos SET stock='$totalStock' where id='$producto->id'";
-                    $bbdd->query($sql);*/
+                    $bbdd->query($sql);
+
 
                 endwhile;
 

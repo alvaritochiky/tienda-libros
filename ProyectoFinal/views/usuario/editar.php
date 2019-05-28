@@ -21,8 +21,8 @@ if (isset($editar) && isset($usu) && is_object($usu)) {
                    value="<?= isset($usu) && is_object($usu) ? $usu->email : ''; ?>"/>
             Contraseña
             <br>
-            <input class="form-control mb-4" type="text" name="password"
-                   value='**************'>
+            <input class="form-control mb-4" type="text" name="password" placeholder="***********"
+                   value=''>
 
             <button class="form-control mb-4 btn btn-success text-white w-50 p-2" type="submit">Guardar</button>
 

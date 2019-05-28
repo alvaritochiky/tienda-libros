@@ -26,6 +26,7 @@ class pedidoController
             $venta = $pedido->venta();
             if ($save && $venta) {
                 $_SESSION["pedido"] = "complete";
+                unset($_SESSION['carrito']);
             } else {
                 $_SESSION["pedido"] = "failed";
             }
