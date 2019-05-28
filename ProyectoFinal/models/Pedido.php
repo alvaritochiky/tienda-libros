@@ -11,14 +11,14 @@ class Pedido
     private $estado;
     private $fecha;
     private $hora;
-
     private $db;
 
+    //Declaro el constructor
     public function __construct()
     {
         $this->db = Database::connect();
     }
-
+    //Declaro los getters and setters
     function getId()
     {
         return $this->id;
@@ -109,19 +109,22 @@ class Pedido
         $this->hora = $hora;
     }
 
+    //Saco todos los campos  de todos los registros de la tabla pedidos con orden descendiente
     public function getAll()
     {
         $productos = $this->db->query("SELECT * FROM pedidos ORDER BY id DESC");
         return $productos;
     }
 
+    //Saco todos los campos de un solo registro de la tabla pedidos
     public function getOne()
     {
         $producto = $this->db->query("SELECT * FROM pedidos WHERE id = {$this->getId()}");
         return $producto->fetch_object();
     }
 
-
+    
+    //Saco los pedidos de un usuario
     public function getOneByUser()
     {
         $sql = "SELECT p.id, p.coste FROM pedidos p WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC LIMIT 1";
@@ -130,7 +133,9 @@ class Pedido
 
         return $pedido->fetch_object();
     }
-    public function getAllByUser(){
+    //Saco los pedidos de todos los usuarios
+    public function getAllByUser()
+    {
         $sql = "SELECT p.* FROM pedidos p "
             . "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC";
 
@@ -139,6 +144,7 @@ class Pedido
         return $pedido;
     }
 
+    //Saco los productos de un pedido
     public function getProductosByPedido($id)
     {
 
@@ -150,6 +156,8 @@ class Pedido
 
         return $productos;
     }
+
+    //Guardo los datos del pedido
 
     function save()
     {
@@ -167,6 +175,7 @@ class Pedido
         }
         return $result;
     }
+
 
     public function venta()
     {
@@ -187,14 +196,17 @@ class Pedido
         }
         return $result;
     }
-    public function edit(){
+
+    //Modifico el estado del pedido
+    public function edit()
+    {
         $sql = "UPDATE pedidos SET estado='{$this->getEstado()}' ";
         $sql .= " WHERE id={$this->getId()};";
 
         $save = $this->db->query($sql);
 
         $result = false;
-        if($save){
+        if ($save) {
             $result = true;
         }
         return $result;

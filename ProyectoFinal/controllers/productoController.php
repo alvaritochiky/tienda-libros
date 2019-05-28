@@ -7,8 +7,8 @@ class productoController
     {
         $producto = new Producto();
         $productos = $producto->getDest();
-        $productosSales=$producto->getMoreSales();
-        $productosNew=$producto->getMoreNew();
+        $productosSales = $producto->getMoreSales();
+        $productosNew = $producto->getMoreNew();
         include_once "views/producto/destacados.php";
     }
     public function indexBooks()
@@ -23,7 +23,7 @@ class productoController
         $productos = $producto->getAllEbooks();
         include_once "views/producto/ebooks.php";
     }
-   /* public function sales(){
+    /* public function sales(){
         $productosSales=new Producto();
         $productosSales=$productosSales->getMoreSales();
         include_once "views/producto/destacados.php";
@@ -108,7 +108,7 @@ class productoController
     public
     function editar()
     {
-        //isAdmin
+
 
         if (isset($_GET["id"])) {
             $edit = true;
@@ -126,7 +126,6 @@ class productoController
     public
     function eliminar()
     {
-        //Llamar al metodo Utils::isAdmin que tengo que crear
 
 
         if (isset($_GET['id'])) {
@@ -154,19 +153,18 @@ class productoController
         if (isset($_POST)) {
 
             if ($_POST["searchBook"] != "") {
-                $nombre=$_POST["searchBook"];
-                $autor=$_POST["searchBook"];
+                $nombre = $_POST["searchBook"];
+                $autor = $_POST["searchBook"];
                 $producto = new Producto();
                 $producto->setNombre($nombre);
                 $producto->setAutor($autor);
                 $product = $producto->searchBook();
-                
-            
+
+
                 include_once "views/producto/search.php";
             } else {
                 header("location:index.php");
             }
         }
-
     }
 }

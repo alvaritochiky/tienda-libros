@@ -3,12 +3,7 @@ include_once "models/Usuario.php";
 
 class usuarioController
 {
-    public function index()
-    {
-        echo "Controlador usuarios, Accion index";
-    }
-
-    public function save()
+    public function register()
     {
         if (isset($_POST)) {
             $usuario = new Usuario();
@@ -16,7 +11,7 @@ class usuarioController
             $usuario->setApellidos($_POST["apellidos"]);
             $usuario->setEmail($_POST["email"]);
             $usuario->setPassword($_POST["password"]);
-            $save = $usuario->save();
+            $save = $usuario->register();
             if ($save) {
 
                 $_SESSION["registro"] = "complete";
@@ -29,7 +24,7 @@ class usuarioController
             $_SESSION["registro"] = "failed";
 
         }
-        header("refresh:0;url=index.php");
+        header("location:index.php");
     }
 
     public function login()
@@ -83,11 +78,6 @@ class usuarioController
 
     public function delete()
     {
-
-
-        //Llamar al metodo Utils::isAdmin que tengo que crear
-
-
         if (isset($_GET['id'])) {
 
             $id = $_GET['id'];
@@ -106,6 +96,54 @@ class usuarioController
         }
 
         header('Location:index.php?controller=usuario&action=listar');
+    }
+
+
+    function edit()
+    {
+            
+        if (isset($_GET["id"])) {
+            $editar = true;
+            $id = $_GET["id"];
+            $usuario = new Usuario();
+            $usuario->setId($id);
+            $usu = $usuario->getOne();
+            include_once "views/usuario/editar.php";
+        } else {
+            header('Location:index.php?controller=producto&action=gestion');
+        }
+    }
+
+    public function editForm(){
+        if (isset($_POST)) {
+            $id = $_GET["id"];
+            $usuario = new Usuario();
+            $usuario->setNombre($_POST["nombre"]);
+            $usuario->setApellidos($_POST["apellidos"]);
+            $usuario->setEmail($_POST["email"]);
+            $usuario->setPassword($_POST["password"]);
+            $usuario->setId($id);
+
+            var_dump($usuario);
+            
+            $save = $usuario->editUser();
+
+
+
+            if ($save) {
+                    echo "skere";
+                $_SESSION["edit"] = "complete";
+                $_SESSION["identity"]->nombre=$usuario->getNombre();
+
+            } else {
+                echo "skereBad";
+                $_SESSION["edit"] = "failed";
+            }
+        } else {
+            $_SESSION["edit"] = "failed";
+
+        }
+         header("location:index.php");
     }
 
 }

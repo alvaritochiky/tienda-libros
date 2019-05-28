@@ -1,11 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alvar
- * Date: 31/03/2019
- * Time: 22:08
- */
-
+//Cuando vamos a una url incorrecta nos muesta este mensaje
 class errorController
 {
 public function index(){

@@ -9,7 +9,7 @@ if (isset($edit) && isset($pro) && is_object($pro)) {
 ?>
 
 <div class="container text-center">
-    <div class="example-1 square scrollbar-dusty-grass square thin pb-5">
+    <div class="row pb-5">
         <form action="<?php echo $url ?>" method="post" enctype="multipart/form-data"
               class="  edit-create-form border border-light p-5 w-75">
 

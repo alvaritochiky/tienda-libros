@@ -5,15 +5,12 @@ class Genero
     private $id;
     private $nombre;
     private $db;
-
+//Declaro el constructor
     function __construct()
     {
         $this->db = Database::connect();
     }
-
-    /**
-     * @return mixed
-     */
+//Declaro los getters and setters
     public function getId()
     {
         return $this->id;
@@ -34,16 +31,20 @@ class Genero
         $this->nombre = $nombre;
     }
 
+    //Saco todos los campos de todos los registros de la tabla genero
     public function getAll()
     {
         $generos=$this->db->query("SELECT * FROM genero");
         return $generos;
 
     }
+    //Saco todos los campos de la tabla genero solo de un registro
     public function getOne(){
         $generos = $this->db->query("SELECT * FROM genero WHERE id={$this->getId()}");
         return $generos->fetch_object();
     }
+
+    //Añado un nuevo genero a la tabla genero
     public function save(){
         $sql = "INSERT INTO genero VALUES(NULL, '{$this->getNombre()}');";
         $save = $this->db->query($sql);

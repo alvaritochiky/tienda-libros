@@ -1,7 +1,9 @@
 <?php
-
+//Clase global para utilizar sus funciones en cualquier sitio
 class Utils
 {
+
+    //Borro la sesion que le paso por parametro
     public static function deleteSession($name)
     {
         if (isset($_SESSION[$name])) {
@@ -11,7 +13,7 @@ class Utils
 
         return $name;
     }
-
+    //Compruebo que la sesion ha sido iniciada
     public static function isIdentity(){
         if(!isset($_SESSION['identity'])){
             header("Location:index.php");
@@ -20,6 +22,7 @@ class Utils
         }
     }
 
+    //Mostrar generos
     public static function showGeneros()
     {
         require_once 'models/Genero.php';
@@ -28,6 +31,7 @@ class Utils
         return $generos;
     }
 
+    //Datos del carrito
     public static function statsCarrito()
     {
         $stats = array(
@@ -45,13 +49,15 @@ class Utils
 
         return $stats;
     }
+
+    //Estado del pedido
     public static function showStatus($status){
         $value = 'Pendiente';
 
         if($status == 'confirm'){
             $value = 'Pendiente';
         }elseif($status == 'preparation'){
-            $value = 'En preparaciÃ³n';
+            $value = 'En preparación';
         }elseif($status == 'ready'){
             $value = 'Preparado para enviar';
         }elseif($status = 'sended'){
