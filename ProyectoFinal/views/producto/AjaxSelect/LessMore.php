@@ -15,7 +15,7 @@
 <?php
 
 $db = new mysqli("localhost", "root", "", "tienda_libros");
-$MenosMas = "SELECT * from productos where tipo='fisico' order by precio asc";
+$MenosMas = "SELECT * from productos where tipo='fisico'  AND stock>0 order by precio asc";
 $prod = $db->query($MenosMas);
 echo "<div class='row'>";
 while ($productos = $prod->fetch_assoc()) {

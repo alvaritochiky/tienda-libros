@@ -10,8 +10,14 @@
                 <div class="col-lg-5 col-sm-12 ml-4 p-4">
                     <h2>Quienes somos</h2>
                     <div>
-                        En La librería de Papá llevamos más de un año trabajando para ofrecer a nuestros clientes el mejor
-                        servicio
+                        La librería de Papá es una tienda de libros online con generos para todo
+                        tipo de personas, ya sean mayores o niños ya que tenemos un amplio numero
+                        de generos.
+                    </div>
+                    <div>
+                        Llevamos mas de tres meses trabajando duro y a contrarreloj para que esta aplicacion
+                        llegue perfectamente preparada al dia de la presentacion. Disfruta comprando en nuestra
+                        tienda y si tienes alguna duda aqui os dejamos nuestras redes sociales.
                     </div>
                 </div>
                 <hr class="clearfix w-100 d-md-none pb-3">
@@ -74,14 +80,11 @@
         },
     });
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
 </body>
-</html>
 
+</html>

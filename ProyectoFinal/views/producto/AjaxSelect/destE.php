@@ -16,7 +16,7 @@
 <?php
 
 $db = new mysqli("localhost", "root", "", "tienda_libros");
-$MenosMas = "SELECT * from productos where tipo='ebook'  order by RAND()";
+$MenosMas = "SELECT * from productos where tipo='ebook'  AND stock>0 order by RAND()";
 $prod = $db->query($MenosMas);
 echo "<div class='row'>";
 while ($productos = $prod->fetch_assoc()) {

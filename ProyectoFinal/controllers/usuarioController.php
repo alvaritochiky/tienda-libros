@@ -59,9 +59,11 @@ class usuarioController
 
         if (isset($_SESSION["identity"])) {
             unset($_SESSION["identity"]);
+            unset($_SESSION["carrito"]);
         }
         if (isset($_SESSION["admin"])) {
             unset($_SESSION["admin"]);
+            unset($_SESSION["carrito"]);
         }
         header("location:index.php");
     }
@@ -75,7 +77,7 @@ class usuarioController
 
         include_once "views/usuario/listar.php";
     }
-
+//Borro el usuario desde el administrador
     public function delete()
     {
         if (isset($_GET['id'])) {
@@ -144,6 +146,29 @@ class usuarioController
 
         }
          header("location:index.php");
+    }
+    //Borro el usuario desde editar perfil
+    public function deleteUser()
+    {
+        if (isset($_GET['id'])) {
+
+            $id = $_GET['id'];
+            $usuario = new Usuario();
+            $usuario->setId($id);
+
+            $delete = $usuario->deleteUser();
+            if ($delete) {
+
+                $_SESSION['deleteUser'] = 'complete';
+                unset($_SESSION['identity']);
+            } else {
+                $_SESSION['deleteUser'] = 'failed';
+            }
+        } else {
+            $_SESSION['deleteUser'] = 'failed';
+        }
+
+        header('Location:index.php');
     }
 
 }

@@ -5,7 +5,7 @@
 
         <?php
         while ($product = $productos->fetch_object()) {
-
+           
             echo "<div class='product col-lg-3 ml-lg-5 col-sm-12 mt-3'>";
             echo "<a href='index.php?controller=producto&action=ver&id=$product->id'>";
             if ($product->imagen != null) {

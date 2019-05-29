@@ -16,6 +16,7 @@
         echo "<div class='col-lg-5'><a href='index.php?controller=producto&action=ver&id=$productos->id'><h1>$productos->nombre </h1>";
         echo "</a>";
         echo "<p class='h2 font-italic'>" . $productos->autor . "</p>";
+       
         echo "<p class='h1'>" . $productos->precio . " €</p>";
         echo "<a href='index.php?controller=carrito&action=add&id=$productos->id' class='btn btn-success text-white' id='btn-prod'>Comprar</a>";
 

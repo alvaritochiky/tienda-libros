@@ -108,7 +108,6 @@ textarea {
     background-color: white;
 }
 
-
 .fa-shopping-cart,
 #carr {
     font-size: 25px;
@@ -121,13 +120,11 @@ textarea {
     width: 100%;
 }
 
-
 .form-inline input[type="text"]:focus {
     border: 1px solid black;
     color: black;
     box-shadow: none;
 }
-
 
 .edit-create-form {
     margin-left: 11%;
@@ -256,6 +253,7 @@ input[type="submit"]:hover,
     display: block;
     width: 50%;
     float: left;
+    margin-left: 25%;
 }
 
 #detail-product .data {
@@ -324,8 +322,6 @@ input[type="submit"]:hover,
     border-bottom: dotted white 2px;
     font-size: 22px;
 }
-
-
 
 
 /*FOOTER*/
@@ -417,7 +413,7 @@ footer {
         margin-left: 0;
         margin-right: 0;
     }
-    .titulo{
+    .titulo {
         font-size: 14px;
     }
 }

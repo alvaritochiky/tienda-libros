@@ -155,13 +155,13 @@ class Producto
     //Saco todos los campos de un registro aleatorio de la tabla productos
     public function getDest()
     {
-        $productos = $this->db->query("SELECT * FROM productos order by RAND() LIMIT 1");
+        $productos = $this->db->query("SELECT * FROM productos where stock>0 order by RAND() LIMIT 1 ");
         return $productos;
     }
     //Saco todos los campos de 10 registros aleatorio de la tabla productos
     public function getMoreSales()
     {
-        $productosSales = $this->db->query("SELECT * FROM productos order by rand() limit 10");
+        $productosSales = $this->db->query("SELECT * FROM productos where stock>0 order by rand() limit 10 ");
         return $productosSales;
     }
 
@@ -169,7 +169,7 @@ class Producto
     // de la tabla productos
     public function getMoreNew()
     {
-        $productosSales = $this->db->query("SELECT * FROM productos order by fecha limit 10");
+        $productosSales = $this->db->query("SELECT * FROM productos where stock>0 order by fecha limit 10");
         return $productosSales;
     }
     //Saco todos los campos de todos los registros de la tabla productos
@@ -182,13 +182,13 @@ class Producto
     //Saco todos los campos de todos los registros que sean de tipo fisico de la tabla productos
     public function getAllBooks()
     {
-        $productos = $this->db->query("SELECT * FROM productos where tipo='fisico'");
+        $productos = $this->db->query("SELECT * FROM productos where tipo='fisico' AND stock>0");
         return $productos;
     }
     //Saco todos los campos de todos los registros que sean de tipo ebook de la tabla productos
     public function getAllEbooks()
     {
-        $productos = $this->db->query("SELECT * FROM productos where tipo='ebook'");
+        $productos = $this->db->query("SELECT * FROM productos where tipo='ebook' AND stock>0");
         return $productos;
     }
     //Saco todos los campos del registro que coincida la id que le paso de la tabla productos
@@ -197,12 +197,12 @@ class Producto
         $productos = $this->db->query("SELECT * FROM productos WHERE id='$this->id'");
         return $productos->fetch_object();
     }
-    //Saco todos los generos a partir de los productos
+    //Saco todos libros segun el genero que sean
     public function getAllGenero()
     {
-        $sql = "SELECT * FROM productos "
+        $sql = "SELECT productos.id,productos.nombre,productos.autor,productos.imagen,productos.precio FROM productos "
             . "INNER JOIN genero on productos.genero_id=genero.id "
-            . "WHERE productos.genero_id = {$this->getGeneroId()} ";
+            . "WHERE productos.stock>0 AND productos.genero_id = {$this->getGeneroId()} ";
         $productos = $this->db->query($sql);
         return $productos;
     }
@@ -273,7 +273,7 @@ class Producto
     public function searchBook()
     {
 
-        $productos = $this->db->query("SELECT * FROM productos WHERE nombre='$this->nombre' OR  autor='$this->autor'");
+        $productos = $this->db->query("SELECT * FROM productos WHERE stock>0 AND (nombre='$this->nombre' OR  autor='$this->autor') ");
         return $productos;
     }
 }

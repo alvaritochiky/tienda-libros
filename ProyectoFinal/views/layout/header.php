@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <script type="text/javascript">
+   
+    //Codigo para el pdf
         $(document).ready(function() {
             $('#Download').click(function() {
 
@@ -51,6 +53,8 @@
 
 <body>
     <?php
+
+    //Modales
     if (isset($_SESSION['error_login'])) {
         ?>
 
@@ -92,6 +96,37 @@
         <?php
         Utils::deleteSession("edit");
     }
+    if (isset($_SESSION["deleteUser"]) && $_SESSION["deleteUser"] == "complete") {
+        ?>
+        <script>
+            function a() {
+                Swal.fire(
+                    'Perfecto',
+                    'El usuario ha sido borrado correctamente!',
+                    'success'
+                )
+            }
+    
+            a();
+        </script>
+        <?php
+    } elseif (isset($_SESSION["deleteUser"]) && $_SESSION["deleteUser"] == "failed") {
+        ?>
+        <script>
+            function a() {
+                Swal.fire({
+                    type: 'error',
+                    title: 'Vaya',
+                    text: 'El usuario no se ha podido borrar',
+                })
+            }
+    
+            a();
+        </script>
+        <?php
+    
+    }
+    Utils::deleteSession("deleteUser");
 
     ?>
     <nav class=" success-color menuHeader" id="menuHeader">
@@ -125,11 +160,7 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="items">Géneros</span></a>
                         <div class="dropdown-menu dropdown-primary green accent-3" aria-labelledby="navbarDropdownMenuLink">
                             <?php $genero = Utils::showGeneros(); ?>
-                            <!--<a class="dropdown-item" href="index.php?controller=genero&action=show" >Romantica</a>
-                        <a class="dropdown-item" href="#">Fantasia</a>
-                        <a class="dropdown-item" href="#">Juvenil</a>
-                        <a class="dropdown-item" href="#">Thriller</a>
-                        <a class="dropdown-item" href="#">Novela Grafica</a>-->
+                            
                             <?php while ($gen = $genero->fetch_object()) : ?>
 
                                 <a class="dropdown-item" href="index.php?controller=genero&action=show&id=<?= $gen->id ?>"><?= $gen->nombre ?></a>
@@ -213,14 +244,14 @@
 
                                     <i class="fas fa-user prefix grey-text"></i>
 
-                                    <input type="email" id="defaultForm-email" class="form-control  text-dark m-5" name="email" id="email">
+                                    <input type="email" id="defaultForm-email" class="form-control  text-dark m-5" name="email" id="email" required>
 
                                     <label for="defaultForm-email" class="text-success ">Email</label>
 
                                 </div>
                                 <div class="md-form mb-4">
                                     <i class="fas fa-lock prefix grey-text"></i>
-                                    <input type="password" id="defaultForm-pass" class="form-control  text-dark m-5" name="pass" id="pass">
+                                    <input type="password" id="defaultForm-pass" class="form-control  text-dark m-5" name="pass" id="pass" required>
                                     <label for="defaultForm-pass" class="text-success">Contraseña</label>
                                     <hr>
                                 </div>
@@ -254,27 +285,27 @@
                             <div class="col">
 
                                 <div class="md-form">
-                                    <input type="text" id="materialRegisterFormFirstName" class="form-control" name="nombre">
+                                    <input type="text" id="materialRegisterFormFirstName" class="form-control" name="nombre" required>
                                     <label for="materialRegisterFormFirstName">Nombre</label>
                                 </div>
                             </div>
                             <div class="col">
 
                                 <div class="md-form">
-                                    <input type="text" id="materialRegisterFormLastName" class="form-control" name="apellidos">
+                                    <input type="text" id="materialRegisterFormLastName" class="form-control" name="apellidos" required>
                                     <label for="materialRegisterFormLastName">Apellido</label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="md-form mt-0 ml-4 p-3">
-                            <input type="email" id="materialRegisterFormEmail" class="form-control" name="email">
+                            <input type="email" id="materialRegisterFormEmail" class="form-control" name="email" required>
                             <label for="materialRegisterFormEmail">Email</label>
                         </div>
 
 
                         <div class="md-form ml-4 p-3">
-                            <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" name="password">
+                            <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" name="password" required>
                             <label for="materialRegisterFormPassword">Contraseña</label>
 
                         </div>

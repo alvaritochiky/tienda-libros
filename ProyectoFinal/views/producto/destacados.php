@@ -13,19 +13,14 @@ if (!isset($_SESSION["admin"])) {
         <div class="carousel-inner" role="listbox">
 
             <div class="carousel-item active">
-                <img class="d-block w-100" src="assets/img/carrousel2.jpg"
-                     alt="First slide">
+                <a href="index.php?controller=producto&action=ver&id=32"><img class="d-block w-100" src="assets/img/carrousel2.jpg" alt="First slide"></a>
             </div>
 
             <div class="carousel-item">
-                <a href="index.php?controller=genero&action=show&id=5"><img class="d-block w-100"
-                                                                            src="assets/img/carrousel3.jpg"
-                                                                            alt="Second slide"></a>
+                <a href="index.php?controller=genero&action=show&id=5"><img class="d-block w-100" src="assets/img/carrousel3.jpg" alt="Second slide"></a>
             </div>
             <div class="carousel-item">
-                <a href="index.php?controller=producto&action=ver&id=3"> <img class="d-block w-100"
-                                                                              src="assets/img/carrousel5.jpg"
-                                                                              alt="Third slide"></a>
+                <a href="index.php?controller=producto&action=ver&id=43"> <img class="d-block w-100" src="assets/img/carrousel5.jpg" alt="Third slide"></a>
             </div>
 
         </div>
@@ -67,8 +62,6 @@ if (!isset($_SESSION["admin"])) {
             echo "<a href='index.php?controller=carrito&action=add&id=$product->id' class='btn btn-success text-white' id='btn-prod'>Comprar</a>";
 
             echo "<br><br><br></div>";
-
-
         }
         ?>
     </div>
@@ -80,7 +73,6 @@ if (!isset($_SESSION["admin"])) {
 
                 while ($product = $productosSales->fetch_object()) {
                     echo "<div class='swiper-slide' ><a href='index.php?controller=producto&action=ver&id=$product->id'><img src='$product->imagen'></a></div>";
-
                 }
                 ?>
             </div>
@@ -104,13 +96,11 @@ if (!isset($_SESSION["admin"])) {
 
     ?>
     </div>
-    <?php
+<?php
 } else {
     ?>
     <script>
-
-
-        document.getElementById("basicExampleNav").style.visibility="hidden";
+        document.getElementById("basicExampleNav").style.visibility = "hidden";
     </script>
     <h1 class="ml-5">Gestiones del administrador</h1>
     <div class="containter">
@@ -120,40 +110,32 @@ if (!isset($_SESSION["admin"])) {
         <div class="row"></div>
         <div class="row">
             <div class="col-xl-4 col-sm-0"></div>
-            <a href='index.php?controller=genero&action=index' class='btn default-color  text-white  col-xl-4 col-sm-12 m-5 p-4'
-               id='btn-prod'><span class="h4">Gestionar generos <i class="fas fa-bars fa-lg"></i></span></a>
+            <a href='index.php?controller=genero&action=index' class='btn default-color  text-white  col-xl-4 col-sm-12 m-5 p-4' id='btn-prod'><span class="h4">Gestionar generos <i class="fas fa-bars fa-lg"></i></span></a>
             <div class="col-xl-4 col-sm-0"></div>
         </div>
         <div class="row">
             <div class="col-xl-4 col-sm-0"></div>
-            <a href='index.php?controller=usuario&action=listar' class='btn default-color text-white col-xl-4 col-sm-12 m-5 p-4'
-               id='btn-prod'><span class="h4">Gestionar usuarios <i class="fas fa-users fa-lg"></i></span></a>
+            <a href='index.php?controller=usuario&action=listar' class='btn default-color text-white col-xl-4 col-sm-12 m-5 p-4' id='btn-prod'><span class="h4">Gestionar usuarios <i class="fas fa-users fa-lg"></i></span></a>
             <div class="col-xl-4 col-sm-0"></div>
         </div>
         <div class="row">
             <div class="col-xl-4 col-sm-0"></div>
-            <a href='index.php?controller=producto&action=gestion' class='btn default-color text-white col-xl-4 col-sm-12 m-5 p-4'
-               id='btn-prod'><span class="h4">Gestionar productos <i class="fas fa-book fa-lg"></i></span></a>
+            <a href='index.php?controller=producto&action=gestion' class='btn default-color text-white col-xl-4 col-sm-12 m-5 p-4' id='btn-prod'><span class="h4">Gestionar productos <i class="fas fa-book fa-lg"></i></span></a>
             <div class="col-xl-4 col-sm-0"></div>
         </div>
         <div class="row">
             <div class="col-xl-4 col-sm-0"></div>
-            <a href='index.php?controller=pedido&action=gestion' class='btn default-color text-white col-xl-4 col-sm-12 m-5 p-4'
-               id='btn-prod'><span class="h4">Gestionar pedidos <i class="fas fa-shopping-cart fa-lg"></i></span></a>
+            <a href='index.php?controller=pedido&action=gestion' class='btn default-color text-white col-xl-4 col-sm-12 m-5 p-4' id='btn-prod'><span class="h4">Gestionar pedidos <i class="fas fa-shopping-cart fa-lg"></i></span></a>
             <div class="col-xl-4 col-sm-0"></div>
         </div>
         <div class="row">
             <div class="col-xl-4 col-sm-0"></div>
-            <a href='index.php?controller=usuario&action=logout' class='btn warning-color-dark text-white col-xl-4 col-sm-12 m-5 p-4'
-               id='btn-prod'><span class="h4">Cerrar Sesion <i class="fas fa-power-off fa-lg"></i></span></a>
+            <a href='index.php?controller=usuario&action=logout' class='btn warning-color-dark text-white col-xl-4 col-sm-12 m-5 p-4' id='btn-prod'><span class="h4">Cerrar Sesion <i class="fas fa-power-off fa-lg"></i></span></a>
             <div class="col-xl-4 col-sm-0"></div>
         </div>
     </div>
 
 
-    <?php
+<?php
 }
 ?>
-
-
-
