@@ -1,0 +1,5 @@
+en gestionar pedidos el apartado de atras cambiar url.
+modificar select para ordenar los libros/ebooks.
+cambiar nombre de libro tambores de otoño, no me pilla la Ñ.
+cambiar tamaño que queda del stock,restar 1 al total que queda./mirarlo bien
+
