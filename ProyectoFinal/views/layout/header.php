@@ -4,13 +4,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Tienda de Libros</title>
-
+    <title>La Librería de Papá</title>
+    <!--Icono-->
+    <link rel="icon" type="image/png" href="assets/img/LogoIcon.png"/>
     <!--SweetAlert2-->
 
     <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>
-    <script src='assets/JS/Select.js'></script>
+    
 
     <!--Swipper-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
@@ -18,14 +19,14 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
-
+    <script src='assets/JS/Select.js'></script>
+    <script src="assets/JS/Register.js"></script>
     <script type="text/javascript">
    
     //Codigo para el pdf
@@ -237,7 +238,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form action="index.php?controller=usuario&action=login" method="post" onsubmit="return validar()">
+                        <form action="index.php?controller=usuario&action=login" method="post" onsubmit="validateLogin()">
                             <div class="modal-body mx-3">
 
                                 <div class="md-form mb-5">
@@ -279,7 +280,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form class="text-center" action="index.php?controller=usuario&action=register" method="post">
+                    <form class="text-center" action="index.php?controller=usuario&action=register" method="post" onsubmit="validateResgister()">
 
                         <div class="form-row ml-2 p-3">
                             <div class="col">

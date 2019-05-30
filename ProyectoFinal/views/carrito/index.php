@@ -1,4 +1,4 @@
-<div class="example-1 square scrollbar-dusty-grass square thin ">
+<div>
     <h1>Carrito de la compra</h1>
 
     <?php if (isset($_SESSION['carrito']) && count($_SESSION['carrito']) >= 1) {
@@ -62,7 +62,7 @@
                                         }
                                     }
                                 };
-                                if (cont <= stock) {
+                                if (cont < stock) {
                                     xhttp.open("GET", "index.php?controller=carrito&action=up&index=" + indi, true);
                                     xhttp.send();
                                 } else {

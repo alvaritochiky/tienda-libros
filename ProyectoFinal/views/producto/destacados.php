@@ -38,7 +38,7 @@ if (!isset($_SESSION["admin"])) {
 
     <h1 class="mb-5">Producto destacado</h1>
 
-    <!--<div class="example-1 square scrollbar-dusty-grass square thin row pb-2">-->
+
     <div class="row h2-sm">
         <?php
 

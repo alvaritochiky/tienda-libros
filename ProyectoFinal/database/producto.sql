@@ -22,7 +22,7 @@ INSERT INTO productos (id, genero_id,nombre,autor,descripcion, precio,tipo, stoc
         (NULL, '3', 'El secreto de Xein','Laura Gallego', 'Resume', '17', 'fisico','12', NULL, '2019-04-11', 'assets/img/libros/los-juegos-del-hambre.jpg',null),
         (NULL, '3', 'El secreto de Xein','Laura Gallego', 'Resume', '17', 'ebook','12', NULL, '2019-04-11', 'assets/img/libros/sinsajo.jpg',null),
         (NULL, '3', 'El secreto de Xein','Laura Gallego', 'Resume', '17', 'fisico','12', NULL, '2019-04-11', 'assets/img/libros/ciudades-de-papel.jpg',null),
-        (NULL, '3', 'El secreto de Xein','Laura Gallego', 'Resume', '17', 'ebook','12', NULL, '2019-04-11', 'assets/img/libros/tambores-de-otoño.jpg',null),
+        (NULL, '3', 'El secreto de Xein','Laura Gallego', 'Resume', '17', 'ebook','12', NULL, '2019-04-11', 'assets/img/libros/tambores-de-otono.jpg',null),
 
         /*Romantica*/
         (NULL, '2', '50 sombras de grey', 'E. L. James','Cuando la estudiante de literatura Anastasia Steele recibe el encargo de entrevistar al exitoso y joven empresario Christian Grey, queda impresionada al encontrarse ante un hombre atractivo, seductor y también muy intimidante. La inexperta e inocente Ana intenta olvidarle, pero pronto comprende cuánto le desea.

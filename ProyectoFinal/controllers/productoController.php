@@ -23,11 +23,6 @@ class productoController
         $productos = $producto->getAllEbooks();
         include_once "views/producto/ebooks.php";
     }
-    /* public function sales(){
-        $productosSales=new Producto();
-        $productosSales=$productosSales->getMoreSales();
-        include_once "views/producto/destacados.php";
-    }*/
 
     public function ver()
     {
@@ -78,10 +73,6 @@ class productoController
             $filename = $file["name"];
             $mimetype = $file["type"];
 
-            /*if(!is_dir("uploads/images")){
-                mkdir("uploads/images");
-            }
-            move_uploaded_file($file["tmp_name"],"uploads/images".$filename);*/
             $producto->setImagen($filename);
             $file1 = $_FILES["pdf"];
             $filename1 = $file1["name"];

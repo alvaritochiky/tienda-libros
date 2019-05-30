@@ -1,10 +1,10 @@
 
 
-<h1>Libros</h1>
+<h1>Ebook</h1>
 
 <div class="row">
     <div class="col-5"></div>
-    <select class="browser-default custom-select w-25 col-2 " name='filters' onchange='testFilt(this.value)'>
+    <select class="browser-default custom-select w-25 col-2 success-color text-white" name='filters' onchange='testFilt(this.value)'>
         <option selected disabled>Ordenar por:</option>
         <option value="destE">Destacados</option>
         <option value="LessMoreE">Precio: de mas bajo a mas alto</option>

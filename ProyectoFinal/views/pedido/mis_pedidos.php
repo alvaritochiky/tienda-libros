@@ -3,7 +3,7 @@
 <?php else: ?>
     <h1>Mis pedidos</h1>
 <?php endif; ?>
-<a href="javascript:window.history.back();"><i class="fas fa-arrow-left fa-2x"></i><span class="h2">ATRÁS</span><!--<img src="assets/img/back-arrow.gif" width="100px" height="75px">ATRAS--></a>
+<a href="index.php"><i class="fas fa-arrow-left fa-2x"></i><span class="h2">ATRÁS</span></a>
 <br><br>
 <div class="table-responsive">
     <table class="table">

@@ -1,16 +1,14 @@
 
-
-
 <h1>Libros</h1>
 
 <div class="row">
-    <div class="col-5"></div>
-    <select class="browser-default custom-select w-25 col-2 " name='filters' onchange='testFilt(this.value)'>
+    <div class="col-5 "></div>
+    <select class="browser-default custom-select w-25 col-2 success-color text-white" name='filters' onchange='testFilt(this.value)'>
         <option selected disabled>Ordenar por:</option>
         <option value="dest">Destacados</option>
         <option value="LessMore">Precio: de mas bajo a mas alto</option>
         <option value="MoreLess">Precio: de mas alto a mas bajo</option>
-        <option value=Alpha>Alfabeticamente</option>
+        <option value=alpha>Alfabeticamente</option>
     </select>
     <div col="5"></div>
 </div>
