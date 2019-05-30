@@ -1,5 +1,4 @@
-en gestionar pedidos el apartado de atras cambiar url.
-modificar select para ordenar los libros/ebooks.
-cambiar nombre de libro tambores de otoño, no me pilla la Ñ.
-cambiar tamaño que queda del stock,restar 1 al total que queda./mirarlo bien
+-cambiar dos url del carrusel, poner el id que tienen cuando creo la base de datos //chusta
+-jquery validar formulario login y registrar //chusta
+-bbdd //pereza
 
