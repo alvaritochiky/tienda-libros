@@ -1,4 +1,13 @@
 -cambiar dos url del carrusel, poner el id que tienen cuando creo la base de datos //chusta
 -jquery validar formulario login y registrar //chusta
--bbdd //pereza
+
+documentacion:
+-cambiar pantallas de footer, y confirmado y mi perfil
+-añadir pagina de editar perfil.
+-añadir codigo.
+-añadir portada.
+-repasar errores.
+-buscar CD.
+
+
 
