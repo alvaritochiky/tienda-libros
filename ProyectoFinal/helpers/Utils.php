@@ -25,7 +25,7 @@ class Utils
     //Mostrar generos
     public static function showGeneros()
     {
-        require_once 'models/Genero.php';
+        include_once 'models/Genero.php';
         $genero = new Genero();
         $generos = $genero->getAll();
         return $generos;

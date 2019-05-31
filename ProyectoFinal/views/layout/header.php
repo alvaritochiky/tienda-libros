@@ -214,9 +214,9 @@
             if (isset($_SESSION["identity"])) {
                 $idUser = $_SESSION['identity']->id;
                 ?>
-                    <a class="dropdown-item" href="index.php?controller=pedido&action=mis_pedidos">Mis pedidos</a>
-                    <a class="dropdown-item" href="index.php?controller=usuario&action=edit&id=<?= $idUser ?>">Editar perfil</a>
-                    <a class="dropdown-item" href="index.php?controller=usuario&action=logout">Cerrar Sesión</a>
+                    <a class="dropdown-item" href="index.php?controller=pedido&action=mis_pedidos">Mis pedidos <i class="fas fa-shopping-basket fa-lg"></i></a>
+                    <a class="dropdown-item" href="index.php?controller=usuario&action=edit&id=<?= $idUser ?>">Editar perfil <i class="fas fa-user-edit fa-lg"></i></a>
+                    <a class="dropdown-item" href="index.php?controller=usuario&action=logout">Cerrar Sesión <i class="fas fa-power-off fa-lg"></i></a>
 
 
                 </div>

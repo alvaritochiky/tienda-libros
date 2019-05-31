@@ -10,13 +10,12 @@
                 <div class="col-lg-5 col-sm-12 ml-4 p-4">
                     <h2>Quienes somos</h2>
                     <div>
-                        La librería de Papá es una tienda de libros online con generos para todo
-                        tipo de personas, ya sean mayores o niños ya que tenemos un amplio numero
-                        de generos.
+                        La librería de Papá es una tienda de libros online con géneros para todo
+                        tipo de personas, ya sean mayores o niños y con diversos tipos de formatos.
                     </div>
                     <div>
-                        Llevamos mas de tres meses trabajando duro y a contrarreloj para que esta aplicacion
-                        llegue perfectamente preparada al dia de la presentacion. Disfruta comprando en nuestra
+                        Llevamos más de tres meses trabajando duro y a contrarreloj para que esta aplicación
+                        llegue perfectamente preparada al día de la presentación. Disfruta comprando en nuestra
                         tienda y si tienes alguna duda aqui os dejamos nuestras redes sociales.
                     </div>
                 </div>

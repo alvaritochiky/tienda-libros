@@ -1,11 +1,11 @@
 <?php
 session_start();
 ob_start();
-require_once 'autoload.php';
-require_once 'config/parameters.php';
+include_once 'autoload.php';
+include_once 'config/parameters.php';
 include_once "config/Database.php";
 include_once "helpers/Utils.php";
-require_once 'views/layout/header.php';
+include_once 'views/layout/header.php';
 
 
 function show_error()
@@ -39,4 +39,4 @@ if (class_exists($nombre_controlador)) {
 } else {
     show_error();
 }
-require_once 'views/layout/footer.php';
+include_once 'views/layout/footer.php';

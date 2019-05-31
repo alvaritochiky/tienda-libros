@@ -272,8 +272,7 @@ class Producto
     //Buscar un producto
     public function searchBook()
     {
-
-        $productos = $this->db->query("SELECT * FROM productos WHERE stock>0 AND (nombre='$this->nombre' OR  autor='$this->autor') ");
+        $productos = $this->db->query("SELECT * FROM productos WHERE stock>0  AND (nombre='$this->nombre' OR  autor='$this->autor')");
         return $productos;
     }
 }

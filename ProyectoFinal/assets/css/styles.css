@@ -341,17 +341,19 @@ footer {
 .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 238px;
-    height: 366px;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    height: 366px;
+    width: 238px;
 }
 
 .dest img {
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    height: 366px;
+    width: 238px;
 }
 
 @media (max-width: 426px) {

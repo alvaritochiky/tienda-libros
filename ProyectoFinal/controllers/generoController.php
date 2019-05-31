@@ -32,7 +32,7 @@ class generoController
     }
     public function crear(){
 
-        require_once 'views/genero/crear.php';
+        include_once 'views/genero/crear.php';
     }
     public function save(){
 

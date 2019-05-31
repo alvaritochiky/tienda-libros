@@ -13,7 +13,7 @@ if (!isset($_SESSION["admin"])) {
         <div class="carousel-inner" role="listbox">
 
             <div class="carousel-item active">
-                <a href="index.php?controller=producto&action=ver&id=32"><img class="d-block w-100" src="assets/img/carrousel2.jpg" alt="First slide"></a>
+                <a href="index.php?controller=producto&action=ver&id=32"><img class="d-block w-100" src="assets/img/carrousel2.png" alt="First slide"></a>
             </div>
 
             <div class="carousel-item">
