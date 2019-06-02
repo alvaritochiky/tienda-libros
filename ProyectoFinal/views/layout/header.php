@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
+    <meta name="tipo_contenido"  content="text/html;" http-equiv="content-type" charset="utf-8">
     <title>La Librería de Papá</title>
     <!--Icono-->
     <link rel="icon" type="image/png" href="assets/img/LogoIcon.png"/>
@@ -25,30 +25,14 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!--Ficheros JS-->
     <script src='assets/JS/Select.js'></script>
-    <script src="assets/JS/Register.js"></script>
+    <script src="assets/JS/Validation.js"></script>
+    <script src="assets/JS/InvoicesPDF.js"></script>
     <script type="text/javascript">
    
     //Codigo para el pdf
-        $(document).ready(function() {
-            $('#Download').click(function() {
 
-                var w = document.getElementById("pdf").offsetWidth;
-                var h = document.getElementById("pdf").offsetHeight;
-
-
-                html2canvas(document.getElementById("pdf"), {
-
-                    onrendered: function(canvas) {
-                        var img = canvas.toDataURL("image/jpeg", 1);
-                        var doc = new jsPDF('L', "mm", [w, h]);
-                        doc.addImage(img, 'JPEG', 0, 0);
-                        doc.save('factura.pdf');
-                    }
-                });
-            });
-
-        });
     </script>
 </head>
 
@@ -238,28 +222,29 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form action="index.php?controller=usuario&action=login" method="post" onsubmit="validateLogin()">
+                        <form action="index.php?controller=usuario&action=login" method="post" >
                             <div class="modal-body mx-3">
 
                                 <div class="md-form mb-5">
 
                                     <i class="fas fa-user prefix grey-text"></i>
 
-                                    <input type="email" id="defaultForm-email" class="form-control  text-dark m-5" name="email" id="email" required>
-
+                                    <input type="email" id="defaultForm-email" class="form-control  text-dark m-5" name="email" id="email" required onchange="validateFormLogIn()">
+                                    <div id="errorEmail"></div>
                                     <label for="defaultForm-email" class="text-success ">Email</label>
 
                                 </div>
                                 <div class="md-form mb-4">
                                     <i class="fas fa-lock prefix grey-text"></i>
-                                    <input type="password" id="defaultForm-pass" class="form-control  text-dark m-5" name="pass" id="pass" required>
+                                    <input type="password" id="defaultForm-pass" class="form-control  text-dark m-5" name="pass" id="pass" required onchange="validateFormLogIn()">
+                                    <div id="errorPass"></div>
                                     <label for="defaultForm-pass" class="text-success">Contraseña</label>
                                     <hr>
                                 </div>
 
                             </div>
                             <div class="d-flex justify-content-center mb-4">
-                                <button type="submit" class="btn success-color text-white">Entrar</button>
+                                <button type="submit" disabled class="btn success-color text-white" id="logInButton">Entrar</button>
                             </div>
                             <p class="text-center">¿No tienes cuenta?
                                 <a href="" data-toggle="modal" data-target="#modalRegisterForm">Registrate
@@ -280,45 +265,56 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form class="text-center" action="index.php?controller=usuario&action=register" method="post" onsubmit="validateResgister()">
+                    <form class="text-center" action="index.php?controller=usuario&action=register" method="post">
 
                         <div class="form-row ml-2 p-3">
                             <div class="col">
 
                                 <div class="md-form">
-                                    <input type="text" id="materialRegisterFormFirstName" class="form-control" name="nombre" required>
+                                    <input type="text" id="materialRegisterFormFirstName" class="form-control" name="nombre" required onchange="validateFormSignIn()">
+                                    <div id="errorName"></div>
                                     <label for="materialRegisterFormFirstName">Nombre</label>
                                 </div>
                             </div>
                             <div class="col">
 
                                 <div class="md-form">
-                                    <input type="text" id="materialRegisterFormLastName" class="form-control" name="apellidos" required>
+                                    <input type="text" id="materialRegisterFormLastName" class="form-control" name="apellidos" required onchange="validateFormSignIn()">
+                                    <div id="errorLastName"></div>
                                     <label for="materialRegisterFormLastName">Apellido</label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="md-form mt-0 ml-4 p-3">
-                            <input type="email" id="materialRegisterFormEmail" class="form-control" name="email" required>
+                            <input type="email" id="materialRegisterFormEmail" class="form-control" name="email" required onchange="validateFormSignIn()">
+                            <div id="errorEmailSingIn"></div>
                             <label for="materialRegisterFormEmail">Email</label>
                         </div>
 
 
                         <div class="md-form ml-4 p-3">
-                            <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" name="password" required>
+                            <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" name="password" required onchange="validateFormSignIn()">
+                            <div id="errorPassSignIn"></div>
                             <label for="materialRegisterFormPassword">Contraseña</label>
+
+                        </div>
+                        <div class="md-form ml-4 p-3">
+                            <input type="password" id="materialRegisterFormCheckPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" name="ckeck-password" required onchange="validateFormSignIn()">
+                            <div id="errorRePass"></div>
+                            <label for="materialRegisterFormPassword">Repite tu contraseña</label>
 
                         </div>
 
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="defaultChecked2" required>
+                            <input type="checkbox" class="custom-control-input" id="defaultChecked2" required onchange="validateFormSignIn()">
+                            <div id="errorTerms"></div>
                             <label class="custom-control-label" for="defaultChecked2">Aceptar terminos y condiciones</label>
                         </div>
 
 
                         <div class="d-flex justify-content-center mb-4 mt-5">
-                            <button type="submit" class="btn success-color text-white">Registrar</button>
+                            <button type="submit" disabled id="signInButton" class="btn success-color text-white">Registrar</button>
                         </div>
 
                     </form>

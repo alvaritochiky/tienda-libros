@@ -80,7 +80,7 @@ if (isset($_SESSION['pedido']) && $_SESSION['pedido'] == 'complete') {
                 </table>
             </div>
         </div>
-        <a class="btn btn-success">Descargar pdf con la factura</a>
+        <a class="btn btn-success" id="Download">Descargar pdf con la factura</a>
 
 
     <?php

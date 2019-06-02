@@ -355,6 +355,10 @@ footer {
     height: 366px;
     width: 238px;
 }
+.class-error {
+    color: red;
+    display: inline-block;
+}
 
 @media (max-width: 426px) {
     .descriptionDest {
